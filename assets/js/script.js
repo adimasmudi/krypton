@@ -20,7 +20,6 @@ $(document).ready(function () {
     $(window).on('scroll',function(){
         if($(window).width() >= 1080){
             if(scrollY > 1800 && scrollY <= 5000 ){
-                $('.icon-gradasi').css('visibility','visible');
                 for(item of $('.icon-path')){
                     $(`.${item.className.split(' ')[1]}`).css('filter','brightness(50%)')
                 }
@@ -33,8 +32,6 @@ $(document).ready(function () {
                 }else if(scrollY >= 4150 && scrollY <= 5000){
                     $('.data-science-icon-path').css('filter','brightness(100%)');
                 }
-            }else{
-                $('.icon-gradasi').css('visibility','hidden');
             }
         }else{
             $('.icon-gradasi').css('visibility','hidden');

@@ -249,10 +249,10 @@ $red-color : #A30404;
 }
 
 .icon-gradasi{
-    position: fixed;
+    position: sticky;
     top:200px;
+    bottom : 0;
     width: 200px;
-    visibility: hidden;
     img{
         transition: 0.4s;
         margin:10px auto;
