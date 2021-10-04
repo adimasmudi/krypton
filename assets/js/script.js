@@ -53,6 +53,17 @@ $(document).ready(function () {
     });
 });
 
+const preloading = document.querySelector(".preloading");
+if(preloading){
+    const body = document.querySelector('body');
+    body.style.overflow = 'hidden';
+
+    setTimeout(function(){
+        body.style.overflow = 'visible';
+        preloading.classList.add('hidden');
+    },3000);
+}
+
 
 
 
