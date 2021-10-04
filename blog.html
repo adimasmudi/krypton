@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css">
+    
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+    
+    <!-- icon -->
+    <link rel="icon" href="assets/img/logo/krypton_new.png">
+
+    
+
+    <!-- style -->
+    <link rel="stylesheet" href="assets/style/style.css">
+
+
+    <title>Krypton | learn coding fast and effective</title>
+  </head>
+  <body>
+
+    <!-- nav -->
+    <nav class="navbar navbar-expand-lg shadow-sm fixed-top bg-main d-flex flex-column">
+      <div class="container-fluid">
+          <a class="navbar-brand" href="#" style="line-height:5px">
+              <img src="assets/img/logo/krypton_new.png" alt="" width="45" class="ps-3"/>
+              <span class="text-light text-bold">Krypton</span>
+          </a>
+          <button class="navbar-toggler first-button" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <div class="animated-icon1"><span></span><span></span><span></span></div>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="nav navbar-nav ms-auto">
+                  <li class="nav-item pe-4" data-page="index">
+                      <a class="lp-btn nav-link text-light tebal-sedang active text-active text-garis" aria-current="page">
+                        Learning path
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down" viewBox="0 0 16 16">
+                          <path d="M3.204 5h9.592L8 10.481 3.204 5zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659z"/>
+                        </svg>
+                      </a>
+                  </li>
+                  <li class="nav-item pe-4" data-page="about">
+                      <a href="blog.html" class="nav-link text-light tebal-sedang">Blog</a>
+                  </li>
+                  <li class="nav-item pe-4" data-page="contact">
+                      <a href="contact.html" class="nav-link text-light tebal-sedang">Contact us</a>
+                  </li>
+                  <a class="btn shadow-sm text-light btn-outline-success">Login or Sign up</a>
+              </ul>
+          </div>
+      </div>
+
+      <!-- learning path -->
+      <div class="learning-path hidden">
+        <div class="container-md">
+          <div class="row">
+            <div class="col-md-3 h-100">
+              <h2>Web</h2>
+              <h6>Fullstack javascript developer</h6>
+              <h6>Frontend web developer</h6>
+              <h6>Backend web developer</h6>
+              <h6>Fullstack web developer</h6>
+            </div>
+            <div class="col-md-3">
+              <h2>Apps</h2>
+              <h6>Android developer</h6>
+              <h6>IOS developer</h6>
+              <h6>Multiplatform apps developer</h6>
+              <h6>Desktop apps developer</h6>
+            </div>
+            <div class="col-md-3">
+              <h2>UI/UX</h2>
+              <h6>Master Figma</h6>
+              <h6>Complete Sketch tutorial</h6>
+              <h6>Adobe xd mastery</h6>
+            </div>
+            <div class="col-md-3">
+              <h2>Data science</h2>
+              <h6>Data engineering</h6>
+              <h6>Data analysis</h6>
+              <h6>Machine Learning engineering</h6>
+              <h6>Deep learning mastery</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- learning path -->
+    </nav>
+    <!-- nav -->
+
+    <!-- menu -->
+    <div class="menu-article container-md mt-5 mb-5">
+        <div class="row justify-content-center mt-5">
+            <div class="col-md-10">
+                <div class="container-sm mt-5">
+                    <div class="row ">
+                        <div class="col-sm-3 mt-2">
+                            <div class="btn btn-category btn-active" data-category="all">All</div>
+                        </div>
+                        <div class="col-sm-3 mt-2">
+                            <div class="btn btn-category btn-outline-active" data-category="tutorial">Tutorial</div>
+                        </div>
+                        <div class="col-sm-3 mt-2">
+                            <div class="btn btn-category btn-outline-active" data-category="news">News</div>
+                        </div>
+                        <div class="col-sm-3 mt-2">
+                            <div class="btn btn-category btn-outline-active" data-category="tips-trick">Tips & Trick</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="row justify-content-center mt-5">
+            <div class="col-md-8">
+                <h1>Read our articles and gain more knowledge</h1>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <form action="#">
+                <div class="inner-form">
+                    <div class="input-field">
+                      <input class="search-article" id="choices-text-preset-values" type="text" placeholder="Type to search..." />
+                      <button class="btn-search" type="button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                          <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+            </form>
+        </div>
+        <div class="article-list row justify-content-center mt-5">
+            <div class="col-md-12 inner-article-list"></div>
+        </div>
+    </div>
+    <!-- menu -->
+
+    <!-- blog item -->
+    <div class="blog-items hidden container-md mb-4">
+        <div class="row">
+            <div class="col">
+                <div alt="image-header" class="img-header">
+                    <div class="back-to-article-list btn btn-outline-active mt-2 ms-2">back</div>
+                </div>
+            </div>
+        </div>
+        <div class="row detailed-author">
+            <div class="col-md-10">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h5 class="article-author-name">Author</h5>
+                            <span class="article-time">Time</span>
+                        </div>
+                        <div class="col-md-6"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                <div class="article-title">
+                    <h1 class="text-center article-title">Article Title</h1>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                <div class="article-content">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo ut voluptatum tenetur consequatur esse? Nulla dolor voluptatibus eius natus nemo magni quasi sint minus quibusdam eaque excepturi vero minima qui rem adipisci eum iste corrupti, magnam rerum. Minima eius rem ut eaque. Nam neque, fuga voluptatum possimus vero commodi rem illum deleniti nihil sequi quidem quisquam aliquid accusamus enim odit consequatur voluptas non. Recusandae quas nesciunt, labore, ipsam dolorum commodi consequatur obcaecati odio deleniti sint maxime eligendi reprehenderit laborum tempora? Enim optio dolore commodi totam! Impedit quae ab veniam repellat eos maiores deleniti facere optio nisi temporibus blanditiis amet molestiae necessitatibus ex laborum dicta, harum consectetur totam vitae eveniet, distinctio placeat. Autem officia inventore aperiam quam, accusamus odio, numquam expedita explicabo qui sapiente consequatur libero accusantium eligendi, repudiandae id. Minima, unde sunt recusandae possimus nemo repellendus tempora nihil est dignissimos maxime cupiditate saepe velit ullam accusantium, natus quibusdam voluptate non illo omnis! Dolorum nemo esse ratione. Veritatis officiis fugiat autem quisquam omnis, pariatur, incidunt nulla facere non earum voluptatum iste. Accusamus totam, eligendi illo tempora, atque eius nostrum iusto mollitia ipsam itaque accusantium dignissimos, officia cupiditate cum ex provident incidunt aliquid voluptates fugit! Eaque dolor accusantium officia quidem hic quasi dolorem ipsam eos voluptas, eligendi eius reprehenderit cumque porro natus architecto, adipisci amet ullam quaerat modi quos suscipit? Nulla pariatur quas ut facilis, dignissimos voluptate blanditiis illum consectetur perspiciatis tenetur? Aspernatur reiciendis ducimus amet magni, aliquid tempora, impedit libero rerum praesentium natus cupiditate vero. Tempore facere quo, dolor alias fugit, illo officiis ut velit autem id iste. Consectetur maxime perspiciatis recusandae quia quaerat, eum adipisci, consequuntur quisquam voluptatum in laudantium obcaecati nobis quam illo quasi, aut architecto? Nisi obcaecati accusamus iusto rerum suscipit ea deleniti molestias beatae, commodi amet, excepturi odit voluptates placeat atque facere, ratione in voluptatum perferendis optio consequatur id. Illo maxime ratione quis voluptas ipsa animi aperiam tempore molestiae quibusdam vero, numquam, possimus sapiente! Doloribus exercitationem unde, nihil natus vitae quaerat in incidunt, illum pariatur, recusandae quia. Est vitae, aspernatur a officiis iure fugiat facilis quam saepe at, aliquid earum similique labore distinctio commodi atque quibusdam, veniam iusto. Incidunt quasi delectus magnam animi autem maiores beatae doloremque dolore. Vero, velit consectetur laborum error facilis debitis eaque, rem cumque dolore repudiandae nam veniam ipsa. Quas illum, eveniet eos aperiam culpa quisquam! Totam temporibus id iusto rerum eos autem perferendis velit laborum eveniet dolore perspiciatis labore aliquam ad, neque quod dignissimos dolores ullam nesciunt? Molestiae, ab rem. Modi, dolor voluptatum vitae necessitatibus soluta excepturi, corporis magni quisquam inventore quam perferendis eos. Blanditiis tenetur quidem sapiente odio pariatur, adipisci consequuntur quo dolor doloribus! Excepturi sit cupiditate quidem atque dignissimos perferendis recusandae temporibus deserunt repellendus, molestias aspernatur eum incidunt omnis et ratione odit ex numquam placeat quis consectetur nam fugiat alias. Est esse eligendi laboriosam molestiae dolores quia ipsum velit, a quibusdam consequuntur aut sequi, voluptate vel dicta harum placeat facilis expedita. Deserunt, aperiam adipisci est delectus dolorum beatae optio tempore recusandae cumque, saepe eveniet ab id corrupti nesciunt autem commodi maiores dolores quidem quaerat amet asperiores fugiat maxime? Ad accusamus quasi doloribus rerum ea maxime laborum velit mollitia corrupti, at dolorum quo hic eius voluptas necessitatibus a. Accusamus, aperiam. Corporis consequuntur nemo officiis deleniti eveniet porro repellat, nisi saepe illo tempora dolorum veritatis dolorem qui modi, molestiae suscipit cumque. Quas hic eaque reiciendis, eos iste voluptas explicabo a nam et laboriosam consectetur quod fugiat dolorem officia quibusdam, nulla mollitia suscipit enim error? Harum voluptatem, quidem vitae incidunt consequuntur deserunt porro inventore dolore praesentium enim maiores iusto, repudiandae tempore. Assumenda nobis eaque at culpa fugit esse aspernatur repudiandae fuga rem sunt numquam illo amet voluptates, voluptatum, incidunt quidem maiores alias dicta laudantium placeat odio deleniti nostrum quaerat similique. Minus, dicta nobis aperiam natus vitae officia beatae cupiditate doloribus adipisci neque tenetur saepe laudantium ab consequuntur libero, quisquam fuga architecto aliquam! Libero voluptates cum sed, modi id odio alias. Incidunt, sapiente eius commodi exercitationem, voluptas asperiores magni cum cupiditate autem provident tenetur libero, natus nesciunt voluptates reiciendis. Alias pariatur ducimus, dolor illo tempora quasi ex neque fuga ratione ipsum expedita, amet ipsa fugit rem sit porro reprehenderit beatae provident? Harum officia praesentium est at, tempora, in amet, natus numquam veniam corrupti quos similique adipisci? Odit omnis molestiae esse vero. Quos accusamus dolor quae inventore fuga eos autem mollitia nobis enim atque laboriosam asperiores similique qui beatae expedita, doloremque facere velit vitae ipsum. Cum pariatur ad vel doloribus, perspiciatis sapiente consequuntur sunt debitis. Voluptatum cupiditate nam quos officia earum esse, hic fugit. Reiciendis ipsam aliquid saepe iste laborum inventore, sequi, velit quasi iure aspernatur deserunt dignissimos reprehenderit, cum sunt perspiciatis facere impedit neque omnis veniam ut ab! Fuga, consectetur? Eligendi illum illo praesentium, quisquam optio enim sunt maxime commodi. Necessitatibus aperiam doloribus dignissimos corrupti, cum id consequatur atque vitae, qui officia amet harum blanditiis? Aperiam delectus impedit officiis reiciendis eligendi ipsa voluptatum non, iusto commodi consequatur unde necessitatibus est, blanditiis dignissimos iure tempore dolorum pariatur quisquam rerum! Excepturi quaerat tempora libero nesciunt unde itaque consequatur earum explicabo amet beatae ipsam rem rerum error eaque suscipit corrupti aliquam a omnis, corporis deleniti labore officia! Totam illo perferendis ab praesentium! Fugit expedita maiores laboriosam! Voluptate eaque dolorum ratione, mollitia debitis illo inventore rem animi nihil repellendus veritatis sunt esse itaque ad autem impedit nostrum nulla ea repellat minus. Saepe debitis harum ex maiores officiis modi? Quisquam totam aut aliquam explicabo vero eius adipisci dolore quis modi repellendus porro, corrupti quo est non suscipit, ipsa temporibus dicta ducimus et laudantium officia! Minima nisi, mollitia amet officia magnam soluta atque similique quaerat saepe ullam tempora dignissimos sapiente beatae aperiam, quo molestiae numquam reiciendis voluptatum, laborum dolorum ratione. Tenetur aspernatur saepe itaque quod aut, omnis obcaecati. Quos, deserunt! Hic officiis accusantium natus dolor soluta mollitia quia provident architecto delectus, quisquam necessitatibus porro, sunt officia consectetur magnam excepturi a placeat asperiores, error aliquam. Itaque quidem quos nihil ad eum perferendis maiores ducimus tempora exercitationem nesciunt reprehenderit tempore assumenda, nam eius sequi provident at dolor deserunt voluptates! Sint, reiciendis voluptate?
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center mt-5">
+            <div class="col-md-10">
+                <h3>Discussion(0)</h3>
+            </div>
+        </div>
+        <div class="row justify-content-center mb-4">
+            <div class="col-md-10">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-1"> <img src="https://source.unsplash.com/random" class="comment-img mt-2"> </div>
+                        <div class="col-md-5">
+                            <div class="comment-box ml-2">
+                                <h4>Add a comment</h4>
+                                <div class="rating"> <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label> <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label> <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label> <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label> <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label> </div>
+                                <div class="comment-area"> <textarea class="form-control" placeholder="what is your view?" rows="4"></textarea> </div>
+                                <div class="comment-btns mt-2">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="pull-left"> <button class="btn btn-outline-active btn-sm">Cancel</button> </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="pull-right"> <button class="btn btn-active btn-sm">Send <i class="fa fa-long-arrow-right ml-1"></i></button> </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <!-- blog item -->
+
+  <!-- footer -->
+  <section class="footer">
+    <div class="container-fluid">
+        <div class="row mb-5 ps-3">
+          <div class="col-lg-3 col-md-6 pt-5">
+              <img src="assets/img/logo/krypton_new.png" width="45" alt="" />
+              <span class="text-light text-bold">Krypton</span>
+          </div>
+
+          <div class="col-lg-3 col-6 pt-5 fs-6">
+              <h4 class="fs-6 text-light">EXPLORE</h4>
+              <ul class="list-unstyled">
+                  <li><a href="#" class="text-decoration-none text-light">Learning Path</a></li>
+                  <li><a href="#" class="text-decoration-none text-light">Blog</a></li>
+                  <li><a href="#" class="text-decoration-none text-light">Contact us</a></li>
+              </ul>
+          </div>
+
+          <div class="col-lg-3 col-6 pt-5 fs-6">
+              <h4 class="fs-6 text-light">FOLLOW</h4>
+              <ul class="list-unstyled">
+                  <li>
+                      <a href="#" class="text-decoration-none text-light"><i class="fab fa-instagram"></i> Instagram</a>
+                  </li>
+                  <li>
+                      <a href="#" class="text-decoration-none text-light"><i class="fab fa-facebook"></i> Facebook</a>
+                  </li>
+                  <li>
+                      <a href="#" class="text-decoration-none text-light"><i class="fab fa-linkedin"></i> Linkedin</a>
+                  </li>
+              </ul>
+          </div>
+
+          <div class="col-lg-3 col-6 footer-links pt-5 fs-6">
+              <h4 class="fs-6 text-light">LEGAL</h4>
+              <ul class="list-unstyled">
+                  <li><a href="#" class="text-decoration-none text-light">Terms & Privacy</a></li>
+                  <li><a href="#" class="text-decoration-none text-light">FAQ</a></li>
+              </ul>
+          </div>
+
+      </div>
+      <div class="row pb-3 ps-3">
+          <div class="col-lg-4">
+              <p class="text-light">&copy;2021. All Rights Reserved</p>
+          </div>
+          <div class="col-lg-4">
+            <p>logo</p>
+          </div>
+      </div>
+    </div>
+  </section>
+  <!-- footer -->
+  
+  
+  <!-- javascript -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script type="module" src="assets/js/blog.js"></script>
+  <script src="assets/js/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
+
+
+
+</body>
+</html>
