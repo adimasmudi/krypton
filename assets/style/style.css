@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200&display=swap");
+body {
+  overflow-x: hidden;
+}
+
 .hidden {
   display: none;
 }
@@ -280,6 +284,22 @@
   66% {
     opacity: 0;
   }
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px #00061b;
+  background-color: #000929;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: #000929;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.44, #03e0de), color-stop(0.72, #0bb0c7), color-stop(0.86, #1094b9));
 }
 
 .rotate-180-deg {

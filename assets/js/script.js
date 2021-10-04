@@ -40,12 +40,12 @@ $(document).ready(function () {
     });
 
         
-    var a = 0;
+    let a = 0;
     $(window).scroll(function() {
-    var oTop = $('.member').offset().top - window.innerHeight;
+    let oTop = $('.member').offset().top - window.innerHeight;
     if (a == 0 && $(window).scrollTop() > oTop) {
         $('.counter-value').each(function() {
-        var $this = $(this),
+        let $this = $(this),
             countTo = $this.attr('data-count');
         $({
             countNum: $this.text()
