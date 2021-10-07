@@ -151,103 +151,201 @@
             }
         }
 
-        .container-form-mobile{
-            background : white;
-            overflow-x : hidden;
-            margin:0;
-            width:100%;
-            border-radius:20px;
+        
+
+    .card-container {
+        margin-bottom: 30px;
+        width: 80%;
+        height:50%;
+        margin: 0 auto;
+        border-radius:20px;
+       
+        /* flip speed goes here */
+        .card {
+            border:none;
+            transition: transform .85s;
+            transform-style: preserve-3d;
+            position: relative;
+            background: #FFFFFF;
+            border-radius: 20px;
            
+            
 
-            .login-form-mobile{
-               // to login appear : margin-top:-260%;
-               transition: 1.5s;
-               
-               
-               
+            .content{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: rgba(0, 0, 0, 0);
+                box-shadow: none;
+                flex: 1;
+                
             }
-
-            .transition-form-mobile{
-                background-color: $main-color;
+            .footer {
+                
+                
                 color:white;
-                
-                .to-sign-up-mobile{
-                    /* arrow bottom */
-                    .arrow-top{
-                        @include arrow(16%,225deg,10px);
-                    }
-                        
-                    
-                    
-                }
-
-                .empty-div-mobile{
-                    height:40vh;
-                }
-
-                .to-login-mobile{
-                    /* arrow bottom */
-                    .arrow{
-                        @include arrow(13%,45deg,20px);
-                    }
-                    
-                }
-
-                
-
-                h3{
-                    margin:0 1rem;
-                }
-
-                img{
-                    width:20%;
-                    margin:0px auto;
-                    
-                }
+                padding: 5px 0 5px 0;
+                text-align: center;
+                border-radius: 0 0 20px 20px;
             }
 
-            .signup-form-mobile{
-                background: rgb(255, 255, 255);
-                height:60vh;
+            /* hide back of pane during swap */
+            .login-form-mobile, .signup-form-mobile {
+                backface-visibility: hidden;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background-color: #FFF;
+                box-shadow: 0 1px 3px 2px rgba(0, 0, 0, 0.2);
+                display: flex;
+                flex-direction: column;
+                height: 420px;
+                border-radius: 4px;
+                width: 100%;
+                height: 420px;
+                border-radius: 20px;
                 
-                
+            }
+
+            /* front pane, placed above back */
+            .login-form-mobile {
+                z-index: 2;
+            }
+            
+            /* back, initially hidden pane */
+            .signup-form-mobile {
+                transform: rotateY(180deg);
+                z-index: 3;
+
+
                 .signup-page-1-mobile, .signup-page-2-mobile, .signup-page-3-mobile, .signup-page-4-mobile{
-                    position: absolute;
-                    transition:1.5s;
                     width:90%;
-                    color:$main-color;
-                    padding:10px;
-                    margin-top:-10px;
-                    
+                    position: absolute;
+                    top : 50px;
+                    left : 10px;
+                    transition: 1.5s;
+                    border-radius: 20px;
                 }
+
                 .signup-page-1-mobile{
+                    
                     .phone-number{
+                        
                         .value-phone{
                             width:20%;
                         }
 
-                        .phone-number-input{
+                        .number-input{
                             width:70%;
                         }
                     }
                 }
 
-                .signup-page-2-mobile{
+                .signup-page-2-mobile, .signup-page-3-mobile, .signup-page-4-mobile{
                     
                     left : 800px;
                 }
 
-                .signup-page-3-mobile{
-                    left : 800px;
+                .footer{
+                    width : 100%;
+                    position: fixed;
+                    bottom : 0px;
                 }
 
-                .signup-page-4-mobile{
-                    left : 800px;
-                }
             }
-        }
-    }
+    
+            .btn {
+                border: none;
+                border-radius: 2px;
+                display: inline-block;
+                height: 36px;
+                line-height: 36px;
+                padding: 0 16px;
+                font-family: inherit;
+                font-weight: 100;
+                text-align: center;
+                vertical-align: middle;
+                user-select: none;
+                outline: none;
+                border: none;
+                cursor: pointer;
+                transition: .4s;
+            }
+            
+            .btn-rotate {
+                color: #212529;
+                background-color: #ddd;
+            }
+            
+            .btn-rotate:hover {
+                color: #212529;
+                background-color: #ccc;
+            }
+            
+            .btn-rotate:focus{
+                outline: none;
+                border: none;
+            }
+            
+            .btn-submit {
+                width: 50%;
+                margin: 0 auto;
+                border-radius: 20px;
+                text-transform: uppercase;
+                color: #212529;
+                font-weight: bold;
+                background-color: #809BE0;
+            }
+            
+            .btn-submit:hover {
+                color: #212529;
+                background-color: #4D8CDE;
+            }
+            
+            .btn-submit:focus{
+                outline: none;
+                border: none;
+            }
+            
+            form{
+                width: 100%;
+            }
+            
+            
+            
+            
+            .see-password{
+                position: absolute;
+                right: 10px;
+                padding-bottom: 5px;
+                cursor: pointer;
+            }
+            
+            .group input{
+                padding-right: 40px;
+            }
 }
+        
+        
+
+
+
+
+        }
+        /* flip the pane when hovered */
+        .card-container.rotate .card{
+            transform: rotateY( 180deg );
+        }
+        
+
+    }
+
+    
+    
+
+    
+}
+    
 
 @media screen and (max-width:670px){
     body{

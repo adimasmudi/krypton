@@ -132,108 +132,93 @@
         </div>
 
         <!-- mobile -->
-        <div class="container-form-mobile hidden">
-            <div class="login-form-mobile pt-5">
-                <form action="" class="login-form-inside">
-                    <h3 class="text-dark text-center mb-5">Login</h3>
-                    <input class="form-control form-control-md margin-auto mb-5" type="email" placeholder="youemail@email.com" aria-label=".form-control-sm example">
-                    <input class="form-control form-control-md margin-auto mb-5" type="password" placeholder="your password" aria-label=".form-control-sm example">
-                    <div class="d-flex justify-content-center">
-                        <input type="button" class="btn btn-active margin-auto mt-3 mb-3" value="login">
+
+        <div class="card-container">
+            <div class="card">
+                <div class="login-form-mobile">
+                    <div class="content">
+                        <form action="" class="login-form-inside">
+                            <h3 class="text-dark text-center mb-5">Login</h3>
+                            <input class="form-control form-control-md margin-auto mb-5" type="email" placeholder="youemail@email.com" aria-label=".form-control-sm example">
+                            <input class="form-control form-control-md margin-auto mb-5" type="password" placeholder="your password" aria-label=".form-control-sm example">
+                            <div class="d-flex justify-content-center">
+                                <input type="button" class="btn btn-active margin-auto mt-3 mb-3" value="login">
+                            </div>
+                        </form>
                     </div>
-                </form>
-            </div>
-            <div class="transition-form-mobile">
-                <div class="to-sign-up-mobile">
-                    <div class="d-flex justify-content-center">
-                        <img src="assets/img/logo/krypton_new.png" alt="" class="mt-4 mb-4">
+                    <div class="footer">
+                        Don't have an account ?
+                        <button class="btn btn-rotate btn-outline-active" id="btn-signup">Sign up</button>
                     </div>
-                    <h3>didn’t have account yet?
-                        signup to our page</h3>
-                    <div class="arrow-top">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                </div>
-                <div class="empty-div-mobile"></div>
-                <div class="to-login-mobile">
-                    <div class="d-flex justify-content-center">
-                        <img src="assets/img/logo/krypton_new.png" alt="">
-                    </div>
+                </div> <!-- end login-form panel -->
+                <div class="signup-form-mobile">
+                    <h3 class="mt-4 text-center mb-3">Signup</h3>
+                    <form class="d-flex justify-content-center flex-column signup-page-1-mobile">
+                        <h7>Select your location</h7>
+                        <div class="country mt-3">
+                            <select name="country" id="country-mobile" class="form-select select-country">
+                                <option class="option-select">Select your country</option>
+                            </select>
+                        </div>
+                        <div class="phone-number mt-3 d-flex justify-content-between">
+                            <input type="text" class="value-phone" value="" disabled />
+                            <input type="text" class="phone-number-input" placeholder="your phone number"/>
+                        </div>
+                        <div class="btn-next mt-4 d-flex flex-row-reverse">
+                            <button type="button" class="to-next-page-1-mobile btn btn-active text-white">Next</button>
+                        </div>
+                    </form>
+                    <form class="d-flex justify-content-center flex-column signup-page-2-mobile">
+                        <h7>input your personal identities</h7>
+                        <div class="form-group mb-3">
+                            <input type="text" class="form-control bg-muted" placeholder="Name"/>
+                        </div>
+                        <div class="form-group mb-3">
+                            <input type="email" class="form-control bg-muted" placeholder="Email" />
+                        </div>
+                        <div class="form-group mb-3">
+                            <input type="password" class="form-control bg-muted" placeholder="Password" />
+                        </div>
+
+                        <div class="btn-next mt-2 d-flex justify-content-end">
+                            <button type="button" class="to-prev-page-2-mobile btn btn-active text-white">Back</button>
+                            <button type="button" class="to-next-page-2-mobile btn btn-active text-white ms-3">Next</button>
+                        </div>
+                    </form>
                     
-                    <h3>already have account?
-                        login to our page</h3>
-                    <div class="arrow">
-                        <span></span>
-                        <span></span>
-                        <span></span>
+                    <form class="d-flex justify-content-center flex-column signup-page-3-mobile">
+                        <h7>Date and birth</h7>
+                        <div class="form-group">
+                            <input type="date" class="form-control bg-muted" />
+                        </div>
+                        <div class="gender mt-3">
+                            <select name="gender" id="gender-mobile" class="form-select">
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Better don't say">Better don't say</option>
+                            </select>
+                        </div>
+                        <div class="btn-next mt-4 d-flex justify-content-end">
+                            <button type="button" class="to-prev-page-3-mobile btn btn-active text-white">Back</button>
+                            <button type="button" class="to-next-page-3-mobile btn btn-active text-white ms-3">Next</button>
+                        </div>
+                    </form>
+                    <form class="d-flex justify-content-center flex-column signup-page-4-mobile">
+                        <h7>Tell us about you</h7><br />
+                        <textarea name="bio" id="bio-mobile" cols="50" rows="6" placeholder="(e.g) I'm a student that want to learn anything"></textarea>
+                        <div class="btn-next mt-4 d-flex justify-content-end">
+                            <button type="button" class="to-prev-page-4-mobile btn btn-active text-white">Back</button>
+                            <input type="submit" class="btn btn-active text-white ms-3" value="submit" />
+                        </div>
+                    </form>
+                    <div class="footer">
+                        <button class="btn btn-rotate btn-outline-active" id="btn-login">I have an account</button>
                     </div>
-                </div>
+                </div> <!-- end signup-form panel -->
+            </div> <!-- end card -->
+        </div> <!-- end card-container -->
 
-            </div>
-            <div class="signup-form-mobile">
-                <h3 class="mt-4 text-center mb-3">Signup</h3>
-                <form class="d-flex justify-content-center flex-column signup-page-1-mobile">
-                    <h7>Select your location</h7>
-                    <div class="country mt-3">
-                        <select name="country" id="country-mobile" class="form-select select-country">
-                            <option class="option-select">Select your country</option>
-                        </select>
-                    </div>
-                    <div class="phone-number mt-3 d-flex justify-content-between">
-                        <input type="text" class="value-phone" value="" disabled />
-                        <input type="text" class="phone-number-input" placeholder="your phone number"/>
-                    </div>
-                    <div class="btn-next mt-4 d-flex flex-row-reverse">
-                        <button type="button" class="to-next-page-1-mobile btn btn-active text-white">Next</button>
-                    </div>
-                </form>
-                <form class="d-flex justify-content-center flex-column signup-page-2-mobile">
-                    <h7>input your personal identities</h7>
-                    <div class="form-group mb-3">
-                        <input type="text" class="form-control bg-muted" placeholder="Name"/>
-                    </div>
-                    <div class="form-group mb-3">
-                        <input type="email" class="form-control bg-muted" placeholder="Email" />
-                    </div>
-                    <div class="form-group mb-3">
-                        <input type="password" class="form-control bg-muted" placeholder="Password" />
-                    </div>
 
-                    <div class="btn-next mt-2 d-flex justify-content-end">
-                        <button type="button" class="to-prev-page-2-mobile btn btn-active text-white">Back</button>
-                        <button type="button" class="to-next-page-2-mobile btn btn-active text-white ms-3">Next</button>
-                    </div>
-                </form>
-                
-                <form class="d-flex justify-content-center flex-column signup-page-3-mobile">
-                    <h7>Date and birth</h7>
-                    <div class="form-group">
-                        <input type="date" class="form-control bg-muted" />
-                    </div>
-                    <div class="gender mt-3">
-                        <select name="gender" id="gender-mobile" class="form-select">
-                            <option value="Male">Male</option>
-                            <option value="Female">Female</option>
-                            <option value="Better don't say">Better don't say</option>
-                        </select>
-                    </div>
-                    <div class="btn-next mt-4 d-flex justify-content-end">
-                        <button type="button" class="to-prev-page-3-mobile btn btn-active text-white">Back</button>
-                        <button type="button" class="to-next-page-3-mobile btn btn-active text-white ms-3">Next</button>
-                    </div>
-                </form>
-                <form class="d-flex justify-content-center flex-column signup-page-4-mobile">
-                    <h7>Tell us about you</h7><br />
-                    <textarea name="bio" id="bio-mobile" cols="50" rows="6" placeholder="(e.g) I'm a student that want to learn anything"></textarea>
-                    <div class="btn-next mt-4 d-flex justify-content-end">
-                        <button type="button" class="to-prev-page-4-mobile btn btn-active text-white">Back</button>
-                        <input type="submit" class="btn btn-active text-white ms-3" value="submit" />
-                    </div>
-                </form>
-            </div>
-        </div>
     </div>
 
 

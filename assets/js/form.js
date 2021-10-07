@@ -29,7 +29,7 @@ const prevPage4 = document.querySelector(".to-prev-page-4");
 const arrowTop = document.querySelector('.arrow-top');
 const arrow = document.querySelector('.arrow');
 
-const containerFormMobile = document.querySelector('.container-form-mobile');
+const containerFormMobile = document.querySelector('.card-container');
 const loginFormMobile = document.querySelector('.login-form-mobile');
 
 // form
@@ -54,7 +54,10 @@ const prevPage4Mobile = document.querySelector(".to-prev-page-4-mobile");
 if(window.screen.width < 670){
     containerForm.style.visibility = 'hidden';
     containerForm.style.position = 'absolute';
-    containerFormMobile.classList.remove('hidden');
+    containerFormMobile.style.visibility = 'visible';
+    containerFormMobile.style.position = 'relative';
+}else{
+    containerFormMobile.style.visibility = 'hidden';
 }
 
 toSignUpBtn.addEventListener('click',function(){
@@ -114,7 +117,8 @@ window.addEventListener('resize',function(){
         preloading.classList.remove('hidden');
         containerForm.style.visibility = 'hidden';
         containerForm.style.position = 'absolute';
-        containerFormMobile.classList.remove('hidden');
+        containerFormMobile.style.visibility = 'visible';
+        containerFormMobile.style.position = 'relative';
         setTimeout(function(){
             preloading.classList.add('hidden');
         },800);
@@ -122,51 +126,13 @@ window.addEventListener('resize',function(){
     }else{
         containerForm.style.visibility = 'visible';
         containerForm.style.position = 'relative';
-        containerFormMobile.classList.add('hidden');
+        containerFormMobile.style.visibility = 'hidden';
+        
 
     }
+});
 
-    if(window.screen.width >= 600){
-        loginFormMobile.style.marginTop = '-140vh';
-    }
-    else if(window.screen.width >= 400 && window.screen.width < 600){
-        loginFormMobile.style.marginTop = '-115vh';
-    }else if(window.screen.width >= 375 && window.screen.width < 400){
-        loginFormMobile.style.marginTop = '-120vh';
-    }else if(window.screen.width >= 350 && window.screen.width < 375){
-        loginFormMobile.style.marginTop = '-130vh';
-    }else if(window.screen.width >= 280 && window.screen.width < 350){
-        loginFormMobile.style.marginTop = '-270%';
-    }else if(window.screen.width < 280){
-        loginFormMobile.style.marginTop = '-400%';
-    }
-})
 
-// mobile event
-
-arrowTop.addEventListener('click',function(){
-    if(window.screen.width >= 600){
-        loginFormMobile.style.marginTop = '-140vh';
-    }
-    else if(window.screen.width >= 400 && window.screen.width < 600){
-        loginFormMobile.style.marginTop = '-115vh';
-    }else if(window.screen.width >= 375 && window.screen.width < 400){
-        loginFormMobile.style.marginTop = '-120vh';
-    }else if(window.screen.width >= 350 && window.screen.width < 375){
-        loginFormMobile.style.marginTop = '-130vh';
-    }else if(window.screen.width >= 280 && window.screen.width < 350){
-        loginFormMobile.style.marginTop = '-270%';
-    }else if(window.screen.width < 280){
-        loginFormMobile.style.marginTop = '-400%';
-    }
-    // loginFormMobile.style.marginTop = '-280%';
-    // loginFormMobile.style.marginTop = '-130vh';
-    
-})
-
-arrow.addEventListener('click',function(){
-    loginFormMobile.style.marginTop = '0%';
-})
 
 nextPage1Mobile.addEventListener('click',function(){
     signUpPage1Mobile.style.left = '-800px';
@@ -198,3 +164,37 @@ prevPage4Mobile.addEventListener('click',function(){
     signUpPage3Mobile.style.left = '10px';
     signUpPage4Mobile.style.left = '800px';
 })
+
+document.addEventListener('DOMContentLoaded',  (event) => {
+
+    const rotateCard = () => {
+      const cardContainer = document.querySelector('.card-container') 
+      cardContainer.classList.toggle('rotate')
+    }
+    
+    const btnSignup = document.querySelector('#btn-signup') ,
+          btnLogin = document.querySelector('#btn-login')
+    
+    btnSignup.addEventListener('click', rotateCard)
+    btnLogin.addEventListener('click', rotateCard)
+    
+    /*See passwod*/
+    // const seePassword =  () => {
+    //   const seePwdIcon = document.querySelector('.see-password'),
+    //         pwdInput = document.querySelector('.group input')
+    
+    //   seePwdIcon.addEventListener('mousedown', () => {
+    //     pwdInput.type = 'text'
+    //   })
+    
+    //   seePwdIcon.addEventListener('mouseup', () => {
+    //     pwdInput.type = 'password'
+    //   })
+    
+    //   seePwdIcon.addEventListener('mouseover', () => {
+    //     pwdInput.type = 'password'
+    //   })
+    // }
+    
+    // seePassword()
+    })

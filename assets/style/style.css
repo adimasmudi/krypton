@@ -865,6 +865,7 @@ form .inner-form .input-field .btn-search svg {
   background-image: -webkit-gradient(linear, left top, right top, from(#000F43), to(#004D94));
   background-image: linear-gradient(to right, #000F43, #004D94);
   padding-top: 3%;
+  /* flip the pane when hovered */
 }
 
 #body-login-signup .body-login-signup .container-form {
@@ -1173,200 +1174,192 @@ form .inner-form .input-field .btn-search svg {
   left: 1200px;
 }
 
-#body-login-signup .body-login-signup .container-form-mobile {
-  background: white;
-  overflow-x: hidden;
-  margin: 0;
+#body-login-signup .body-login-signup .card-container {
+  margin-bottom: 30px;
+  width: 80%;
+  height: 50%;
+  margin: 0 auto;
+  border-radius: 20px;
+  /* flip speed goes here */
+}
+
+#body-login-signup .body-login-signup .card-container .card {
+  border: none;
+  -webkit-transition: -webkit-transform .85s;
+  transition: -webkit-transform .85s;
+  transition: transform .85s;
+  transition: transform .85s, -webkit-transform .85s;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  position: relative;
+  background: #FFFFFF;
+  border-radius: 20px;
+  /* hide back of pane during swap */
+  /* front pane, placed above back */
+  /* back, initially hidden pane */
+}
+
+#body-login-signup .body-login-signup .card-container .card .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: rgba(0, 0, 0, 0);
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+#body-login-signup .body-login-signup .card-container .card .footer {
+  color: white;
+  padding: 5px 0 5px 0;
+  text-align: center;
+  border-radius: 0 0 20px 20px;
+}
+
+#body-login-signup .body-login-signup .card-container .card .login-form-mobile, #body-login-signup .body-login-signup .card-container .card .signup-form-mobile {
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #FFF;
+  -webkit-box-shadow: 0 1px 3px 2px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 1px 3px 2px rgba(0, 0, 0, 0.2);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 420px;
+  border-radius: 4px;
   width: 100%;
+  height: 420px;
   border-radius: 20px;
 }
 
-#body-login-signup .body-login-signup .container-form-mobile .login-form-mobile {
-  -webkit-transition: 1.5s;
-  transition: 1.5s;
+#body-login-signup .body-login-signup .card-container .card .login-form-mobile {
+  z-index: 2;
 }
 
-#body-login-signup .body-login-signup .container-form-mobile .transition-form-mobile {
-  background-color: #000929;
-  color: white;
+#body-login-signup .body-login-signup .card-container .card .signup-form-mobile {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+  z-index: 3;
 }
 
-#body-login-signup .body-login-signup .container-form-mobile .transition-form-mobile .to-sign-up-mobile {
-  /* arrow bottom */
-}
-
-#body-login-signup .body-login-signup .container-form-mobile .transition-form-mobile .to-sign-up-mobile .arrow-top {
-  margin-top: 16%;
-  width: 100%;
-  position: relative;
-  bottom: 0%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-}
-
-#body-login-signup .body-login-signup .container-form-mobile .transition-form-mobile .to-sign-up-mobile .arrow-top:hover {
-  cursor: pointer;
-}
-
-#body-login-signup .body-login-signup .container-form-mobile .transition-form-mobile .to-sign-up-mobile .arrow-top span {
-  display: block;
-  width: 30px;
-  height: 30px;
-  border-bottom: 5px solid #dadada;
-  border-right: 5px solid #ffffff;
-  -webkit-transform: rotate(225deg);
-          transform: rotate(225deg);
-  margin: -10px auto;
-  -webkit-animation: animate 2s infinite;
-          animation: animate 2s infinite;
-}
-
-#body-login-signup .body-login-signup .container-form-mobile .transition-form-mobile .to-sign-up-mobile .arrow-top span:nth-child(2) {
-  -webkit-animation-delay: -0.2s;
-          animation-delay: -0.2s;
-}
-
-#body-login-signup .body-login-signup .container-form-mobile .transition-form-mobile .to-sign-up-mobile .arrow-top span:nth-child(3) {
-  -webkit-animation-delay: -0.4s;
-          animation-delay: -0.4s;
-}
-
-@-webkit-keyframes animate {
-  0% {
-    opacity: 0;
-    -webkit-transform: rotate(45deg) translate(-10px, -10px);
-            transform: rotate(45deg) translate(-10px, -10px);
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    -webkit-transform: rotate(45deg) translate(10px, 10px);
-            transform: rotate(45deg) translate(10px, 10px);
-  }
-}
-
-@keyframes animate {
-  0% {
-    opacity: 0;
-    -webkit-transform: rotate(45deg) translate(-10px, -10px);
-            transform: rotate(45deg) translate(-10px, -10px);
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    -webkit-transform: rotate(45deg) translate(10px, 10px);
-            transform: rotate(45deg) translate(10px, 10px);
-  }
-}
-
-#body-login-signup .body-login-signup .container-form-mobile .transition-form-mobile .empty-div-mobile {
-  height: 40vh;
-}
-
-#body-login-signup .body-login-signup .container-form-mobile .transition-form-mobile .to-login-mobile {
-  /* arrow bottom */
-}
-
-#body-login-signup .body-login-signup .container-form-mobile .transition-form-mobile .to-login-mobile .arrow {
-  margin-top: 13%;
-  width: 100%;
-  position: relative;
-  bottom: 0%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-}
-
-#body-login-signup .body-login-signup .container-form-mobile .transition-form-mobile .to-login-mobile .arrow:hover {
-  cursor: pointer;
-}
-
-#body-login-signup .body-login-signup .container-form-mobile .transition-form-mobile .to-login-mobile .arrow span {
-  display: block;
-  width: 30px;
-  height: 30px;
-  border-bottom: 5px solid #dadada;
-  border-right: 5px solid #ffffff;
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
-  margin: -10px auto;
-  -webkit-animation: animate 2s infinite;
-          animation: animate 2s infinite;
-}
-
-#body-login-signup .body-login-signup .container-form-mobile .transition-form-mobile .to-login-mobile .arrow span:nth-child(2) {
-  -webkit-animation-delay: -0.2s;
-          animation-delay: -0.2s;
-}
-
-#body-login-signup .body-login-signup .container-form-mobile .transition-form-mobile .to-login-mobile .arrow span:nth-child(3) {
-  -webkit-animation-delay: -0.4s;
-          animation-delay: -0.4s;
-}
-
-@keyframes animate {
-  0% {
-    opacity: 0;
-    -webkit-transform: rotate(45deg) translate(-20px, -20px);
-            transform: rotate(45deg) translate(-20px, -20px);
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    -webkit-transform: rotate(45deg) translate(20px, 20px);
-            transform: rotate(45deg) translate(20px, 20px);
-  }
-}
-
-#body-login-signup .body-login-signup .container-form-mobile .transition-form-mobile h3 {
-  margin: 0 1rem;
-}
-
-#body-login-signup .body-login-signup .container-form-mobile .transition-form-mobile img {
-  width: 20%;
-  margin: 0px auto;
-}
-
-#body-login-signup .body-login-signup .container-form-mobile .signup-form-mobile {
-  background: white;
-  height: 60vh;
-}
-
-#body-login-signup .body-login-signup .container-form-mobile .signup-form-mobile .signup-page-1-mobile, #body-login-signup .body-login-signup .container-form-mobile .signup-form-mobile .signup-page-2-mobile, #body-login-signup .body-login-signup .container-form-mobile .signup-form-mobile .signup-page-3-mobile, #body-login-signup .body-login-signup .container-form-mobile .signup-form-mobile .signup-page-4-mobile {
-  position: absolute;
-  -webkit-transition: 1.5s;
-  transition: 1.5s;
+#body-login-signup .body-login-signup .card-container .card .signup-form-mobile .signup-page-1-mobile, #body-login-signup .body-login-signup .card-container .card .signup-form-mobile .signup-page-2-mobile, #body-login-signup .body-login-signup .card-container .card .signup-form-mobile .signup-page-3-mobile, #body-login-signup .body-login-signup .card-container .card .signup-form-mobile .signup-page-4-mobile {
   width: 90%;
-  color: #000929;
-  padding: 10px;
-  margin-top: -10px;
+  position: absolute;
+  top: 50px;
+  left: 10px;
+  -webkit-transition: 1.5s;
+  transition: 1.5s;
+  border-radius: 20px;
 }
 
-#body-login-signup .body-login-signup .container-form-mobile .signup-form-mobile .signup-page-1-mobile .phone-number .value-phone {
+#body-login-signup .body-login-signup .card-container .card .signup-form-mobile .signup-page-1-mobile .phone-number .value-phone {
   width: 20%;
 }
 
-#body-login-signup .body-login-signup .container-form-mobile .signup-form-mobile .signup-page-1-mobile .phone-number .phone-number-input {
+#body-login-signup .body-login-signup .card-container .card .signup-form-mobile .signup-page-1-mobile .phone-number .number-input {
   width: 70%;
 }
 
-#body-login-signup .body-login-signup .container-form-mobile .signup-form-mobile .signup-page-2-mobile {
+#body-login-signup .body-login-signup .card-container .card .signup-form-mobile .signup-page-2-mobile, #body-login-signup .body-login-signup .card-container .card .signup-form-mobile .signup-page-3-mobile, #body-login-signup .body-login-signup .card-container .card .signup-form-mobile .signup-page-4-mobile {
   left: 800px;
 }
 
-#body-login-signup .body-login-signup .container-form-mobile .signup-form-mobile .signup-page-3-mobile {
-  left: 800px;
+#body-login-signup .body-login-signup .card-container .card .signup-form-mobile .footer {
+  width: 100%;
+  position: fixed;
+  bottom: 0px;
 }
 
-#body-login-signup .body-login-signup .container-form-mobile .signup-form-mobile .signup-page-4-mobile {
-  left: 800px;
+#body-login-signup .body-login-signup .card-container .card .btn {
+  border: none;
+  border-radius: 2px;
+  display: inline-block;
+  height: 36px;
+  line-height: 36px;
+  padding: 0 16px;
+  font-family: inherit;
+  font-weight: 100;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+#body-login-signup .body-login-signup .card-container .card .btn-rotate {
+  color: #212529;
+  background-color: #ddd;
+}
+
+#body-login-signup .body-login-signup .card-container .card .btn-rotate:hover {
+  color: #212529;
+  background-color: #ccc;
+}
+
+#body-login-signup .body-login-signup .card-container .card .btn-rotate:focus {
+  outline: none;
+  border: none;
+}
+
+#body-login-signup .body-login-signup .card-container .card .btn-submit {
+  width: 50%;
+  margin: 0 auto;
+  border-radius: 20px;
+  text-transform: uppercase;
+  color: #212529;
+  font-weight: bold;
+  background-color: #809BE0;
+}
+
+#body-login-signup .body-login-signup .card-container .card .btn-submit:hover {
+  color: #212529;
+  background-color: #4D8CDE;
+}
+
+#body-login-signup .body-login-signup .card-container .card .btn-submit:focus {
+  outline: none;
+  border: none;
+}
+
+#body-login-signup .body-login-signup .card-container .card form {
+  width: 100%;
+}
+
+#body-login-signup .body-login-signup .card-container .card .see-password {
+  position: absolute;
+  right: 10px;
+  padding-bottom: 5px;
+  cursor: pointer;
+}
+
+#body-login-signup .body-login-signup .card-container .card .group input {
+  padding-right: 40px;
+}
+
+#body-login-signup .body-login-signup .card-container.rotate .card {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
 }
 
 @media screen and (max-width: 670px) {
