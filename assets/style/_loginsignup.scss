@@ -1,0 +1,256 @@
+@import 'variable';
+
+#body-login-signup{
+    overflow:hidden;
+    
+    // overflow-x: visible;
+    
+
+    .body-login-signup{
+        height:100vh;
+        background-image: linear-gradient(to right, #000F43 , #004D94);
+        padding-top:3%;
+
+        .container-form{
+            height:85%;
+            width : 80%;
+            margin:auto;
+            border-radius:20px;
+            overflow: hidden;
+            display:flex;
+            flex-direction:row;
+
+            .login-form{
+                position: absolute;
+                left : -20px;
+                width:70%;
+
+
+                .login-form-inside{
+                    width : 70%;
+                    margin : auto;
+
+                    input{
+                        width : 65%;
+
+                        &:focus{
+                            border : 1px solid $main-color;
+                        }
+                    }
+
+                    input[type=button]{
+                        width : 40%;
+
+                        &:focus{
+                            border:1px solid $main-color;
+                        }
+                    }
+                }
+            }
+            .transition-form{
+                position: relative;
+                right:-70%;
+                z-index : 9999999;
+                margin-right:0;
+                display:flex;
+                flex-direction: row;
+                border-radius:0px;
+            }
+            .to-sign-up{
+                @include first-property;
+
+                &:before{
+                    content: '';
+                    position: absolute;
+                    height:100%;
+                    top: 0;
+                    bottom: 0;
+                    right: 10%;
+                    left: -50%;
+                    background: inherit;
+                    border-radius: 10% / 50%;
+                }
+
+                @include image-heading;
+                @include button-transition-effect("\f104");
+            }
+            .empty-div-form{
+                position:relative;
+                width:90vw;
+                height:100%;
+                background:$main-color;
+                border-radius: 0px;
+            }
+            .to-login{
+                @include first-property;
+                border-radius: 10%/50%;
+
+                &:before{
+                    content: '';
+                    position: absolute;
+                    height:100%;
+                    top: 0;
+                    bottom: 0;
+                    right: 10%;
+                    left: -50%;
+                    background: inherit;
+                    
+                }
+
+                @include image-heading;
+
+                @include button-transition-effect("\f105");              
+
+            }
+
+            .sign-up-form{
+                margin-top : 50px;
+                overflow: hidden;
+                position:absolute;
+                left : 40%;
+                height:100%;
+                width : 40vw;
+                
+                
+                .signup-page-1, .signup-page-2, .signup-page-3, .signup-page-4{
+                    width : 36vw;
+                    position: absolute;
+                    transition: 1.5s;
+                }
+
+                .signup-page-1{
+                    
+                    left : 0px;
+                    right : 0px;
+                    
+                    
+                    
+
+                    .phone-number{
+                        width : 100%;
+                        .value-phone{
+                            width:20%;
+                        }
+
+                        .phone-number-input{
+                            width:70%;
+                        }
+
+                    }
+                }
+                .signup-page-2, .signup-page-3, .signup-page-4{
+                    left : 1200px;
+                }
+
+
+                
+                
+                
+
+                
+            }
+        }
+
+        .container-form-mobile{
+            background : white;
+            overflow-x : hidden;
+            margin:0;
+            width:100%;
+            border-radius:20px;
+           
+
+            .login-form-mobile{
+               // to login appear : margin-top:-260%;
+               transition: 1.5s;
+               
+               
+               
+            }
+
+            .transition-form-mobile{
+                background-color: $main-color;
+                color:white;
+                
+                .to-sign-up-mobile{
+                    /* arrow bottom */
+                    .arrow-top{
+                        @include arrow(16%,225deg,10px);
+                    }
+                        
+                    
+                    
+                }
+
+                .empty-div-mobile{
+                    height:40vh;
+                }
+
+                .to-login-mobile{
+                    /* arrow bottom */
+                    .arrow{
+                        @include arrow(13%,45deg,20px);
+                    }
+                    
+                }
+
+                
+
+                h3{
+                    margin:0 1rem;
+                }
+
+                img{
+                    width:20%;
+                    margin:0px auto;
+                    
+                }
+            }
+
+            .signup-form-mobile{
+                background: rgb(255, 255, 255);
+                height:60vh;
+                
+                
+                .signup-page-1-mobile, .signup-page-2-mobile, .signup-page-3-mobile, .signup-page-4-mobile{
+                    position: absolute;
+                    transition:1.5s;
+                    width:90%;
+                    color:$main-color;
+                    padding:10px;
+                    margin-top:-10px;
+                    
+                }
+                .signup-page-1-mobile{
+                    .phone-number{
+                        .value-phone{
+                            width:20%;
+                        }
+
+                        .phone-number-input{
+                            width:70%;
+                        }
+                    }
+                }
+
+                .signup-page-2-mobile{
+                    
+                    left : 800px;
+                }
+
+                .signup-page-3-mobile{
+                    left : 800px;
+                }
+
+                .signup-page-4-mobile{
+                    left : 800px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:670px){
+    body{
+        overflow:hidden;
+    }
+}

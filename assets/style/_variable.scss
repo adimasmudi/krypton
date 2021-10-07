@@ -1,0 +1,138 @@
+$main-color : #000929;
+$main-color-darker : #00061b;
+$main-color-lighter : #000d3b;
+$red-color : #A30404;
+
+@mixin first-property{
+    width:25%;
+    position: relative;
+    height: 100%;
+    background: $main-color;
+    color: white;
+    text-align: center;
+    text-indent: .1em;
+}
+
+@mixin image-heading{
+    img{
+        position:relative;
+        z-index:99999999;
+        width:40%;
+        margin-left:-25%;
+    }
+
+    h3{
+        position:relative;
+        z-index:99999999; 
+        margin-left:-25%;
+        font-size:2.3vw;
+    }
+}
+
+@mixin button-transition-effect($angle){
+    .effect {
+        position: relative;
+        z-index:99999999;
+        width:80%;
+        background: $main-color;
+        border:1px solid #fff;
+        border-radius: 200px;
+        margin-top:20%;
+        margin-left:-30%;
+        text-align: center;
+        display: inline-block;
+        text-decoration: none;
+        color: #fff;
+        text-transform: capitalize;
+        font: {
+        family: 'Roboto', sans-serif; /* put your font-family */
+        size: 18px;
+        }
+        overflow: hidden;
+    }
+    
+    .effect.effect-inside {
+        transition: all 0.2s linear 0s;
+        
+        &:before {
+        content: $angle;
+        font-family: "Font Awesome 5 Pro";
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        left: 0px;
+        height: 100%;
+        width: 30px;
+        background-color: rgba(#fff,0.3);
+        border-radius: 0 50% 50% 0;
+        transform: scale(0,1);
+        transform-origin: left center;
+        transition: all 0.2s linear 0s;
+        }
+        
+        &:hover {
+        text-indent: 30px;
+        background: #fff;
+        color:$main-color;
+        
+        &:before {
+            transform: scale(1,1);
+            text-indent: 0;
+            background: $main-color;
+            color:#fff;
+        }
+        }
+    }
+}
+
+
+@mixin arrow($margin-top,$rotate,$translate-value){
+    margin-top:$margin-top;
+    width:100%;
+    position: relative;
+    bottom: 0%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    &:hover{
+        cursor:pointer;
+    }
+
+    span{
+        display: block;
+        width: 30px;
+        height: 30px;
+        border-bottom: 5px solid #dadada;
+        border-right: 5px solid #ffffff;
+        transform: rotate($rotate);
+        margin: -10px auto;
+        animation: animate 2s infinite;
+
+        &:nth-child(2){
+            animation-delay: -0.2s;
+        }
+
+        &:nth-child(3){
+            animation-delay: -0.4s;
+        }
+    }
+
+    @keyframes animate {
+        0%{
+            opacity: 0;
+            transform: rotate(45deg) translate(-$translate-value,-$translate-value);
+        }
+        50%{
+            opacity: 1;
+        }
+        100%{
+            opacity: 0;
+            transform: rotate(45deg) translate($translate-value,$translate-value);
+        }
+    }
+}
+
+
+

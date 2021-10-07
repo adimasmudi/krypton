@@ -1,0 +1,32 @@
+@import 'variable';
+// contact
+.contact-field{
+    margin : 100px auto;
+    height: 40%;
+    width: 70%;
+    color:white;
+
+    .contact-form{
+        padding:3rem;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+    }
+
+    .image-contact{
+        background: url('../img/contact/contact.jpg');
+        background-size:cover;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+
+    button{
+        color:#fff;
+        width:30%;
+        background-color:$red-color;
+
+        &:hover{
+            color:white;
+            
+        }
+    }
+}

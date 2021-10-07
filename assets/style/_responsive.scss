@@ -1,0 +1,87 @@
+
+
+@media only screen and (max-width: 479px){
+    .owl-buttons{ bottom: 30%; }
+}
+
+@media screen and (max-width:600px){
+
+    .learning-path{
+        margin-top:5px;
+        height:350px;
+        padding-top:0rem;
+        overflow:scroll;
+    }
+    .banner{
+        padding-top:20%;
+        height:60vh;
+        margin-bottom:0px;
+        img{
+            width:100%;
+        }
+    }
+    
+    
+    .web-path, .android-path, .ui-ux-path, .data-science-path{
+        img{
+            width:200px;
+        }
+        .list-every-path{
+            .the-list{
+                width:80%;
+            }
+        }
+    }
+
+    .member{
+        .col-md-3{
+            width:50%;
+            h4{
+                font-size:1rem;
+            }
+        }
+    }
+
+    // contact field
+    .contact-field{
+        width: 90%;
+        height:70%;
+        .contact-form{
+            border-radius: 20px;
+            button{
+                width:80%;
+            }
+        }
+
+        
+    }
+
+}
+@media screen and (max-width:765px){
+    .contact-form{
+        border-radius: 20px;
+    }
+}
+
+// responsive login signup max width 768
+@media screen and (max-width:768px){
+    
+}
+
+
+@media screen and (min-width:600px) and (max-width:1080px){
+    .banner{
+        height:50vh;
+    }
+    .icon-gradasi{
+        width:100px;
+    }
+    .web-path, .android-path, .ui-ux-path, .data-science-path{
+        h1{
+            font-size:1.5rem;
+        }
+        img{
+            width:60%;
+        }
+    }
+}

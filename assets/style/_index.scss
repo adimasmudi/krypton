@@ -1,0 +1,284 @@
+@import 'variable';
+
+.circle-left{
+    height:23vh;
+    width:23vh;
+    background-color: purple;
+    border-radius: 50%;
+    filter:blur(4rem);
+    margin-left:-150px;
+}
+
+.circle-right{
+    height:23vh;
+    width:23vh;
+    background-color: #00B5DC;
+    border-radius: 50%;
+    filter:blur(4rem);
+    margin-right:-250px;
+}
+
+
+// preloading
+.preloading{
+    height:100vh;
+    width:100vw;
+    background-color:#000929;
+    position: fixed;
+    top:0;
+    z-index:9999999;
+
+    figure { 
+        position: absolute;
+        margin: auto;
+        top: 0; bottom: 0; left: 0; right: 0;
+        width: 6.250em; height: 6.250em;
+        animation: rotate 2.4s linear infinite;
+      }
+      .white { 
+        top: 0; bottom: 0; left: 0; right: 0; 
+        background: white; 
+        animation: flash 2.4s linear infinite;
+        opacity: 0;
+      }
+      .dot {
+        position: absolute;
+        margin: auto;
+        width: 2.4em; height: 2.4em;
+        border-radius: 100%;
+        transition: all 1s ease;
+      }
+      .dot:nth-child(2) { top: 0; bottom: 0; left: 0; background: #1094b9; animation: dotsY 2.4s linear infinite; }
+      .dot:nth-child(3) { left: 0; right: 0; top: 0; background: #0bb0c7; animation: dotsX 2.4s linear infinite; }
+      .dot:nth-child(4) { top: 0; bottom: 0; right: 0; background: #06cbd3; animation: dotsY 2.4s linear infinite; }
+      .dot:nth-child(5) { left: 0; right: 0; bottom: 0; background: #03e0de; animation: dotsX 2.4s linear infinite; }
+      
+      @keyframes rotate {
+        0% { transform: rotate( 0 ); }
+        10% { width: 6.250em; height: 6.250em; }
+        66% { width: 2.4em; height: 2.4em; }
+        100%{ transform: rotate(360deg); width: 6.250em; height: 6.250em; }
+      }
+      
+      @keyframes dotsY {
+        66% { opacity: .1; width: 2.4em; }
+        77%{ opacity: 1; width: 0; }
+      }
+      @keyframes dotsX {
+        66% { opacity: .1; height: 2.4em;}
+        77%{ opacity: 1; height: 0; }
+      }
+      
+      @keyframes flash {
+        33% { opacity: 0; border-radius: 0%; }
+        55%{ opacity: .6; border-radius: 100%; }
+        66%{ opacity: 0; }
+      }
+}
+
+
+.banner{
+    padding-top:10%;
+    height:90vh;
+    img{
+        width:80%;
+    }
+}
+
+.content{
+    background-color: $main-color;
+    
+
+    .tech{
+        border : 1px solid #fff;
+        border-radius: 20px;
+    }
+    img{
+        width:100%;
+    }
+    video{
+        width:100%;
+    }
+}
+
+.offers{
+    .image{
+        height:100%;
+    }
+    img{
+        
+        width:80%;
+    }
+    span{
+        color:red;
+    }
+}
+
+.icon-gradasi{
+    position: sticky;
+    top:200px;
+    bottom : 0;
+    width: 200px;
+    img{
+        transition: 0.4s;
+        margin:10px auto;
+        width:50%;
+        height:50%;
+        
+        &:hover{
+            cursor:pointer;
+        }
+    }
+}
+
+.web-path, .android-path, .ui-ux-path, .data-science-path{
+    img{
+        width:60%;
+    }
+    .list-every-path{
+        .the-list{
+            width:50%;
+
+            ul{
+                li{
+                    list-style-type: none;
+                }
+            }
+        }
+        
+    }
+}
+
+
+// testimonials
+.testimonials{
+    #testimonial-slider{
+        padding: 50px 20px 35px 20px;
+        background: #001357;
+        text-align: center;
+        border-radius:10px;
+    }
+
+    .testimonial{
+        .description{
+            font-size: 14px;
+            line-height: 26px;
+            text-indent: 30px;
+            position: relative;
+
+            &:before{
+                content: "\f10d";
+                font-family: "Font Awesome 5 Pro";
+                font-weight: 900;
+                position: absolute;
+                top: 0;
+                left: -15px;
+            }
+        }
+
+        .title{
+            font-size: 24px;
+            font-weight: bold;
+            text-transform: capitalize;
+            margin: 0;
+        }
+
+        .post{
+            display: block;
+            font-size: 15px;
+        }
+    }
+
+    
+    .owl-buttons{
+        width: 100%;
+        height: 40px;
+        position: absolute;
+        bottom: 40%;
+        left: 0;
+
+        
+        
+
+        .owl-prev,
+        .owl-next{
+            position: absolute;
+            left: 0;
+            transition: all 0.4s ease-in-out 0s;
+            background: transparent;
+            &:before{
+                content: "\f104";
+                font-family: "Font Awesome 5 Pro";
+                font-weight: 900;
+                font-size: 60px;
+                font-weight: 900;
+                color: #cacaca;
+                line-height: 20px;
+                opacity: 0.8;
+            }
+
+            &:hover:before{
+                opacity: 1;
+            }
+        }
+        .owl-next{
+            left: auto;
+            right: 0;
+
+            &:before{
+                content: "\f105";
+            }
+        }
+    }
+
+    .owl-theme{
+        .owl-controls{
+            margin-top: 40px;
+            div{
+                background: transparent;
+            }
+
+            .owl-page{
+                span{
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50%;
+                    border: 4px solid #ccc;
+                    background: url("../img/home picture/dev/dev1.jpg") no-repeat;
+                    background-size: cover;
+                    transition: all 0.3s ease-in-out 0s;
+                }
+
+                &:nth-child(2){
+                    span{
+                        background: url("../img/home picture/dev/dev3.jpg") no-repeat;
+                        background-size: cover;
+                    }
+                }
+
+                &:nth-child(3){
+                    span{
+                        background: url("../img/home picture/dev/dev2.jpg") no-repeat;
+                        background-size: cover;
+                    }
+                }
+
+                &:hover{
+                    span{
+                        opacity: 0.5;
+                    }
+                }
+            }
+
+            .owl-page.active{
+                span, &:hover span{
+                    border-color: #d133ff;
+                    opacity: 1;
+                }
+            }
+
+
+        }
+    }
+    
+}
