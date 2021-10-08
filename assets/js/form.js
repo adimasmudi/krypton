@@ -80,35 +80,52 @@ toLoginBtn.addEventListener('click',function(){
     },600)
 })
 
+// step by step form
+const progress = document.getElementById("progress");
+const progressSteps = document.querySelectorAll(".progress-step");
+const progressActive = document.querySelectorAll(".progress-step-active");
+
 nextPage1.addEventListener('click',function(){
     signUpPage1.style.left = '-1200px';
     signUpPage2.style.left = '0px';
+    progressSteps[1].classList.add('progress-step-active');
+    progress.style.width = `${(1/3)*100}%`;
     
 })
 
 nextPage2.addEventListener('click',function(){
     signUpPage2.style.left = '-1200px';
     signUpPage3.style.left = '0px';
+    progressSteps[2].classList.add('progress-step-active');
+    progress.style.width = `${(2/3)*100}%`;
 })
 
 nextPage3.addEventListener('click',function(){
     signUpPage3.style.left = '-1200px';
     signUpPage4.style.left = '0px';
+    progressSteps[3].classList.add('progress-step-active');
+    progress.style.width = `${(3/3)*100}%`;
 })
 
 prevPage2.addEventListener('click',function(){
     signUpPage1.style.left = '0px';
     signUpPage2.style.left = '1200px';
+    progressSteps[1].classList.remove('progress-step-active');
+    progress.style.width = `${0}%`;
 })
 
 prevPage3.addEventListener('click',function(){
     signUpPage2.style.left = '0px';
     signUpPage3.style.left = '1200px';
+    progressSteps[2].classList.remove('progress-step-active');
+    progress.style.width = `${(1/3)*100}%`;
 })
 
 prevPage4.addEventListener('click',function(){
     signUpPage3.style.left = '0px';
     signUpPage4.style.left = '1200px';
+    progressSteps[3].classList.remove('progress-step-active');
+    progress.style.width = `${(2/3)*100}%`;
 })
 
 window.addEventListener('resize',function(){
@@ -132,37 +149,51 @@ window.addEventListener('resize',function(){
     }
 });
 
-
+// step by step form
+const progressMobile = document.getElementById("progress-mobile");
+const progressStepsMobile = document.querySelectorAll(".progress-step-mobile");
+const progressActiveMobile = document.querySelectorAll(".progress-step-active-mobile");
 
 nextPage1Mobile.addEventListener('click',function(){
     signUpPage1Mobile.style.left = '-800px';
     signUpPage2Mobile.style.left = '10px';
+    progressStepsMobile[1].classList.add('progress-step-active-mobile');
+    progressMobile.style.width = `${(1/3)*100}%`;
 })
 
 nextPage2Mobile.addEventListener('click',function(){
     signUpPage2Mobile.style.left = '-800px';
     signUpPage3Mobile.style.left = '10px';
+    progressStepsMobile[2].classList.add('progress-step-active-mobile');
+    progressMobile.style.width = `${(2/3)*100}%`;
 })
 
 prevPage2Mobile.addEventListener('click',function(){
     signUpPage1Mobile.style.left = '10px';
     signUpPage2Mobile.style.left = '800px';
-    
+    progressStepsMobile[1].classList.remove('progress-step-active-mobile');
+    progressMobile.style.width = `${(0)*100}%`;
 })
 
 nextPage3Mobile.addEventListener('click',function(){
     signUpPage3Mobile.style.left = '-800px';
     signUpPage4Mobile.style.left = '10px';
+    progressStepsMobile[3].classList.add('progress-step-active-mobile');
+    progressMobile.style.width = `${(3/3)*100}%`;
 })
 
 prevPage3Mobile.addEventListener('click',function(){
     signUpPage2Mobile.style.left = '10px';
     signUpPage3Mobile.style.left = '800px';
+    progressMobile.style.width = `${(1/3)*100}%`;
+    progressStepsMobile[2].classList.remove('progress-step-active-mobile');
 })
 
 prevPage4Mobile.addEventListener('click',function(){
     signUpPage3Mobile.style.left = '10px';
     signUpPage4Mobile.style.left = '800px';
+    progressMobile.style.width = `${(2/3)*100}%`;
+    progressStepsMobile[3].classList.remove('progress-step-active-mobile');
 })
 
 document.addEventListener('DOMContentLoaded',  (event) => {

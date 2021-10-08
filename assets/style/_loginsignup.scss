@@ -199,10 +199,10 @@
                 box-shadow: 0 1px 3px 2px rgba(0, 0, 0, 0.2);
                 display: flex;
                 flex-direction: column;
-                height: 420px;
+                height: 500px;
                 border-radius: 4px;
                 width: 100%;
-                height: 420px;
+                
                 border-radius: 20px;
                 
             }
@@ -221,7 +221,7 @@
                 .signup-page-1-mobile, .signup-page-2-mobile, .signup-page-3-mobile, .signup-page-4-mobile{
                     width:90%;
                     position: absolute;
-                    top : 50px;
+                    top : 150px;
                     left : 10px;
                     transition: 1.5s;
                     border-radius: 20px;
@@ -352,3 +352,63 @@
         overflow:hidden;
     }
 }
+
+/* Progressbar */
+.progressbar, .progressbar-mobile {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    counter-reset: step;
+    margin: 2rem 0 2rem;
+  }
+  
+  .progressbar::before,
+  .progress, .progressbar-mobile::before,
+  .progress-mobile {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 4px;
+    width: 100%;
+    background-color: white;
+    z-index:-1;
+  }
+  
+  .progress, .progress-mobile {
+    background-color: $main-color;
+    width: 0%;
+    z-index:1;
+    transition: 1.5s;
+  }
+  
+  .progress-step, .progress-step-mobile {
+    width: 2.1875rem;
+    height: 2.1875rem;
+    background-color: white;
+    color:$main-color;
+    border:1px solid $main-color;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index:2;
+  }
+  
+  .progress-step::before,.progress-step-mobile::before {
+    counter-increment: step;
+    content: counter(step);
+  }
+  
+  .progress-step::after, .progress-step-mobile::after {
+    content: attr(data-title);
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    font-size: 0.85rem;
+    color: white;
+  }
+  
+  .progress-step-active, .progress-step-active-mobile {
+    background-color: $main-color;
+    color: white;
+  }

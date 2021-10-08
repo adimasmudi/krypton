@@ -67,8 +67,23 @@
                 </div>
             </div>
             <div class="sign-up-form hidden">
-                <h3 class="mb-5 ms-5">Signup</h3>
-                <form class="d-flex justify-content-center mt-4 flex-column signup-page-1">
+                <h3 class="mb-2 ms-5">Signup</h3>
+                
+                <!-- Progress bar -->
+                <div class="progressbar">
+                    <div class="progress" id="progress"></div>
+                    
+                    <div
+                    class="progress-step progress-step-active"
+                    data-title="Intro"
+                    ></div>
+                    <div class="progress-step " data-title="Contact"></div>
+                    <div class="progress-step " data-title="ID"></div>
+                    <div class="progress-step " data-title="Password"></div>
+                </div>
+                <!-- end progress bar -->
+
+                <form class="d-flex justify-content-center mt-2 flex-column signup-page-1">
                     <h7>Select your location</h7>
                     <div class="country mt-3">
                         <select name="country" id="country" class="form-select select-country">
@@ -102,7 +117,7 @@
                         <button type="button" class="to-next-page-2 btn btn-active text-white ms-3">Next</button>
                     </div>
                 </form>
-                <form class="d-flex justify-content-center mt-4 flex-column signup-page-3">
+                <form class="d-flex justify-content-center mt-2 flex-column signup-page-3">
                     <h7>Date and birth</h7>
                     <div class="form-group">
                         <input type="date" class="form-control bg-muted" />
@@ -119,7 +134,7 @@
                         <button type="button" class="to-next-page-3 btn btn-active text-white ms-3">Next</button>
                     </div>
                 </form>
-                <form class="d-flex justify-content-center mt-4 flex-column signup-page-4">
+                <form class="d-flex justify-content-center mt-2 flex-column signup-page-4">
                     <h7>Tell us about you</h7><br />
                     <textarea name="bio" id="bio" cols="50" rows="6" placeholder="(e.g) I'm a student that want to learn anything"></textarea>
                     <div class="btn-next mt-4 d-flex justify-content-end">
@@ -151,8 +166,19 @@
                         <button class="btn btn-rotate btn-outline-active" id="btn-signup">Sign up</button>
                     </div>
                 </div> <!-- end login-form panel -->
-                <div class="signup-form-mobile">
-                    <h3 class="mt-4 text-center mb-3">Signup</h3>
+                <div class="signup-form-mobile ">
+                    <h3 class="mt-4 text-center">Signup</h3>
+                    <!-- Progress bar -->
+                    <div class="progressbar-mobile">
+                        <div class="progress-mobile" id="progress-mobile"></div>
+                        
+                        <div
+                        class="progress-step-mobile progress-step-active-mobile"></div>
+                        <div class="progress-step-mobile "></div>
+                        <div class="progress-step-mobile "></div>
+                        <div class="progress-step-mobile "></div>
+                    </div>
+                    <!-- end progress bar -->
                     <form class="d-flex justify-content-center flex-column signup-page-1-mobile">
                         <h7>Select your location</h7>
                         <div class="country mt-3">
