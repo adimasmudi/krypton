@@ -209,23 +209,5 @@ document.addEventListener('DOMContentLoaded',  (event) => {
     btnSignup.addEventListener('click', rotateCard)
     btnLogin.addEventListener('click', rotateCard)
     
-    /*See passwod*/
-    // const seePassword =  () => {
-    //   const seePwdIcon = document.querySelector('.see-password'),
-    //         pwdInput = document.querySelector('.group input')
-    
-    //   seePwdIcon.addEventListener('mousedown', () => {
-    //     pwdInput.type = 'text'
-    //   })
-    
-    //   seePwdIcon.addEventListener('mouseup', () => {
-    //     pwdInput.type = 'password'
-    //   })
-    
-    //   seePwdIcon.addEventListener('mouseover', () => {
-    //     pwdInput.type = 'password'
-    //   })
-    // }
-    
-    // seePassword()
+
     })

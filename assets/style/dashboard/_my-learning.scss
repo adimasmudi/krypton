@@ -1,0 +1,64 @@
+
+
+  .my-learning{
+    display:flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    justify-content: space-evenly;
+    
+    
+    .learning-list{
+      height : 320px;
+      width: 300px;
+      margin:10px;
+      border-radius:20px;
+      box-shadow:5px 5px 20px rgba(0, 0, 0, 0.3);
+
+      img{
+        display: block;
+        margin: 10px auto;
+        border-radius: 20px;
+      }
+
+      .progress-bar{
+        height:3px;
+        width:280px;
+        background-color: rgb(202, 202, 202);
+        margin:0px auto;
+        overflow:hidden;
+
+        span{
+          display:block;
+          
+        }
+        .bar{
+          height:2px;
+          width:80%;
+          background-image: linear-gradient(to right, $main-color-darker, $main-color-lighter);
+
+        }
+      }
+
+      
+
+      .action{
+        display:flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin:0px auto;
+        padding:10px;
+        span{
+          font-size:0.8rem;
+        }
+        .continue-learning{
+          height:30px;
+          width:150px;
+          border:none;
+          border-radius: 5px;
+          
+         
+        }
+      }
+    }
+  }

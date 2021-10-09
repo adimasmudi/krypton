@@ -6,6 +6,10 @@ body{
     display:none;
 }
 
+.not-visible{
+    visibility: hidden;
+}
+
 .overflow-hidden{
     overflow:hidden;
 }
@@ -231,4 +235,11 @@ body::-webkit-scrollbar-thumb
 
 .footer{
     background:#00061b ;
+}
+
+// dashboard
+.profile-image-sm{
+    width:30px;
+    height:30px;
+    border-radius:50%;
 }

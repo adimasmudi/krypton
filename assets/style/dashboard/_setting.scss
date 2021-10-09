@@ -1,0 +1,84 @@
+.setting-heading{
+    margin-left:5%;
+}
+.setting-list{
+    display:flex;
+    flex-direction : column;
+    
+
+
+    .setting-item {
+        width:40%;
+        
+        margin-left : 5%;
+        padding:10px 0;
+        display:flex;
+        flex-direction: column;
+
+        input, select{
+            height:40px;
+        }
+
+    }
+
+    .photo-setting{
+        display: flex;
+        flex-direction: row;
+        div{
+            .photo-upload{
+                height:70px;
+                width:70px;
+                border:1px solid $main-color-darker;
+                
+
+            }
+    
+            
+        }
+        div:nth-child(2){
+            display: flex;
+            align-items: end;
+            padding:0 0 10px 10px;
+
+            .upload-photo{
+                width:140px;
+                border: none;
+                height:40px;
+            }
+        }
+    }
+
+    .phone-number-setting{
+        
+        input:first-child{
+            width:20%;
+        }
+        input:nth-child(2){
+            width:70%;
+            float: right;
+            clear: both;
+        }
+    }
+
+    .place-birth-setting{
+        input{
+            margin-top:5px;
+        }
+    }
+
+    .buttons-setting{
+        button{
+            width:100px;
+            border: none;
+            height:40px;
+        }
+    }
+}
+
+@media screen and (max-width:765px){
+    .setting-list{
+        .setting-item{
+            width:90%;
+        }
+    }
+}
