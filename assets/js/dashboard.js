@@ -33,13 +33,19 @@ function menuBtnChange() {
 
 // appear when hover
 const btns = [...document.querySelector('.nav-group').children];
-btns.forEach(function(btn,idx){
-    btn.addEventListener('mouseover',()=>{
-        document.querySelector('.appear-when-hover').children[idx].style.display = 'block';
-    })
-    btn.addEventListener('mouseleave',()=>{
-        document.querySelector('.appear-when-hover').children[idx].style.display = 'none';
-    })
 
+const displayWhenHover = (button,index,theEvent,display)=>{
+    button.addEventListener(theEvent,()=>{
+        document.querySelector('.appear-when-hover').children[index].style.display = display;
+    })
+}
+btns.forEach(function(btn,idx){
+    displayWhenHover(btn,idx,'mouseover','block');
+    displayWhenHover(btn,idx,'mouseleave','none');
+
+})
+
+document.querySelector("#log_out").addEventListener('click',()=>{
+    location.href = '../loginsignup.html';
 })
 

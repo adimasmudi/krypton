@@ -271,6 +271,9 @@ body{
       justify-content: space-evenly;
       width:95%;
       margin:0px auto;
+      div{
+        margin-top:6px;
+      }
 
       .search{
         background:#fff;
@@ -279,7 +282,7 @@ body{
         padding: 0 1%;
         input{
           border:none;
-          background:#fff;
+          background:transparent;
 
           &:focus{
             outline:none;

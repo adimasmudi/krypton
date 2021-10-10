@@ -2049,6 +2049,10 @@ body {
   margin: 0px auto;
 }
 
+.home-section .menu-tools .tools div {
+  margin-top: 6px;
+}
+
 .home-section .menu-tools .tools .search {
   background: #fff;
   border-radius: 50px;
@@ -2058,7 +2062,7 @@ body {
 
 .home-section .menu-tools .tools .search input {
   border: none;
-  background: #fff;
+  background: transparent;
 }
 
 .home-section .menu-tools .tools .search input:focus {

@@ -23,6 +23,8 @@ const prevPage2 = document.querySelector(".to-prev-page-2");
 const prevPage3 = document.querySelector(".to-prev-page-3");
 const prevPage4 = document.querySelector(".to-prev-page-4");
 
+const btnSubmit = document.querySelector(".btn-submit");
+
 ///////////////////////////////
 /////////  mobile  ///////////
 
@@ -126,6 +128,16 @@ prevPage4.addEventListener('click',function(){
     signUpPage4.style.left = '1200px';
     progressSteps[3].classList.remove('progress-step-active');
     progress.style.width = `${(2/3)*100}%`;
+})
+
+btnSubmit.addEventListener("click",function(e){
+    e.preventDefault();
+    preloading.classList.remove('hidden');
+    setTimeout(function(){
+        location.href = 'dashboard/home.html';
+        preloading.classList.add('hidden');
+    },800);
+    
 })
 
 window.addEventListener('resize',function(){
