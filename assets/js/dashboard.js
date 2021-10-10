@@ -46,6 +46,6 @@ btns.forEach(function(btn,idx){
 })
 
 document.querySelector("#log_out").addEventListener('click',()=>{
-    location.href = '../loginsignup.html';
+    location.href = '../index.html';
 })
 

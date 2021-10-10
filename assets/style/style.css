@@ -224,6 +224,11 @@ body::-webkit-scrollbar-thumb {
   background: #00061b;
 }
 
+.footer .logo-needed img {
+  width: 40px;
+  margin: 0 10px 0 10px;
+}
+
 .profile-image-sm {
   width: 30px;
   height: 30px;
@@ -1738,6 +1743,11 @@ body::-webkit-scrollbar-thumb {
 
 .footer {
   background: #00061b;
+}
+
+.footer .logo-needed img {
+  width: 40px;
+  margin: 0 10px 0 10px;
 }
 
 .profile-image-sm {
