@@ -264,6 +264,10 @@ body{
 
   .menu-tools{
     margin: 30px 0;
+
+    h3{
+      margin-left : 30px;
+    }
     .tools{
       display:flex;
       flex-direction: row;
@@ -311,7 +315,13 @@ body{
       // flex-direction: column;
       // justify-content: center;
 
+      &:hover{
+        transform : scale(1.01);
+      }
+
       img{
+        width:280px;
+        height:250px;
         display: block;
         margin:10px auto;
         border-radius: 20px;
@@ -346,10 +356,17 @@ body{
   display:flex;
   flex-direction: row;
 
+  span{
+    line-height:80px;
+    svg{
+      height:15px;
+    }
+  }
+
   div{
     height:80px;
+    background: #fff;
     box-shadow:5px 5px 20px rgba(0, 0, 0, 0.3);
-    display:none;
     text-align:center;
 
     &:nth-child(1){
@@ -361,14 +378,71 @@ body{
     }
 
     &:nth-child(3){
-      width:150px;
-    }
-    span{
-      line-height:80px;
-      svg{
-        height:15px;
+      width:200px;
+      height:150px;
+
+      .profile-group{
+        height:70px;
+        padding-bottom :10px;
+        background-color: #fff;
+        box-shadow:none;
+        display:flex;
+        flex-direction: column;
+        
+
+        .name{
+          margin:0;
+          padding:0;
+          line-height:normal;
+          
+        }
+
+        .level{
+          margin:0px;
+          padding:0;
+          height:30px;
+          line-height:normal;
+          
+          text-align: center;
+
+          
+        }
+
+        .xp{
+          margin:0;
+          padding:0;
+          line-height:normal;
+        }
       }
+
+      div:nth-child(2){
+        width:200px;
+        background: #fff;
+        height:40px;
+        line-height:40px;
+
+        &:hover{
+          cursor: pointer;
+          background: rgb(202, 202, 202);
+        }
+      }
+
+      .exit{
+        height:40px;
+        text-align:center;
+        line-height:40px;
+        box-shadow: none;
+        background: #fff;
+
+        &:hover{
+          cursor: pointer;
+          background: rgb(202, 202, 202);
+        }
+      }
+
+
     }
+    
 
     
   }
@@ -380,6 +454,12 @@ body{
   
   .sidebar li .tooltip{
     display: none;
+  }
+
+  .menu-tools{
+    h3{
+      margin:0;
+    }
   }
 }
 

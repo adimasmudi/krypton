@@ -82,7 +82,7 @@
         </svg>
       </div>
       <div class="appear-when-hover">
-        <div class="cart-appear">
+        <div class="cart-appear hidden">
           <span>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-triangle" viewBox="0 0 16 16">
               <path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/>
@@ -91,7 +91,7 @@
             Your cart is empty
           </span>
         </div>
-        <div class="notif-appear">
+        <div class="notif-appear hidden">
           <span>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-triangle" viewBox="0 0 16 16">
               <path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/>
@@ -100,8 +100,14 @@
             There is no notification yet!
           </span>
         </div>
-        <div class="profile-appear">
-          <span>your profile</span>
+        <div class="profile-appear hidden">
+          <div class="profile-group">
+            <span class="name">Masmudi</span>
+            <span class="level"><i class='bx bx-award'></i>Beginner</span>
+            <span class="xp">200 xp</span>
+          </div>
+          <div class="to-learning-path">Learning Path</div>          
+          <div class="exit"><i class='bx bx-arrow-from-right'></i> Exit</div>
         </div>
       </div>
     </div>
@@ -111,10 +117,11 @@
           <div class="filter">
             <span>Select Your Category</span>
             <select name="category" id="category">
-              <option value="frontend developer">frontend developer</option>
-              <option value="backend developer">backend developer</option>
-              <option value="fullstack developer">fullstack developer</option>
-              <option value="fullstack javascript developer">fullstack javascript developer</option>
+              <option value="all">all</option>
+              <option value="web">web</option>
+              <option value="apps">apps</option>
+              <option value="UI/UX">UI/UX</option>
+              <option value="data science">data science</option>
             </select>
           </div>
           <div class="search">
@@ -123,60 +130,12 @@
              <i class='bx bx-search' ></i>
           </div>
         </div>
+        <h3>Recomendations for you</h3>
       </div>
   
-      <div class="course-offers hidden">
-        <div class="course-item">
-          <img src="https://loremflickr.com/280/250" alt="course image">
-          <h4 class="course-title">Title</h4>
-          <span class="course-price">$ 100</span>
-          <p class="rating">rating</p>
-        </div>
-        <div class="course-item">
-          <img src="https://loremflickr.com/280/250" alt="course image">
-          <h4 class="course-title">Title</h4>
-          <span class="course-price">$ 100</span>
-          <p class="rating">rating</p>
-        </div>
-        <div class="course-item">
-          <img src="https://loremflickr.com/280/250" alt="course image">
-          <h4 class="course-title">Title</h4>
-          <span class="course-price">$ 100</span>
-          <p class="rating">rating</p>
-        </div>
-        <div class="course-item">
-          <img src="https://loremflickr.com/280/250" alt="course image">
-          <h4 class="course-title">Title</h4>
-          <span class="course-price">$ 100</span>
-          <p class="rating">rating</p>
-        </div>
-        <div class="course-item">
-          <img src="https://loremflickr.com/280/250" alt="course image">
-          <h4 class="course-title">Title</h4>
-          <span class="course-price">$ 100</span>
-          <p class="rating">rating</p>
-        </div>
-        <div class="course-item">
-          <img src="https://loremflickr.com/280/250" alt="course image">
-          <h4 class="course-title">Title</h4>
-          <span class="course-price">$ 100</span>
-          <p class="rating">rating</p>
-        </div>
-        <div class="course-item">
-          <img src="https://loremflickr.com/280/250" alt="course image">
-          <h4 class="course-title">Title</h4>
-          <span class="course-price">$ 100</span>
-          <p class="rating">rating</p>
-        </div>
-        <div class="course-item">
-          <img src="https://loremflickr.com/280/250" alt="course image">
-          <h4 class="course-title">Title</h4>
-          <span class="course-price">$ 100</span>
-          <p class="rating">rating</p>
-        </div>
-      </div>
+      <div class="course-offers"></div>
     </div>
   </div>
-  <script src="../assets/js/dashboard.js"></script>
+  <script type="module" src="../assets/js/dashboard.js"></script>
 </body>
 </html>

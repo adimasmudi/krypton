@@ -12,9 +12,13 @@ const articleTitle = document.querySelector(".article-title");
 
 const backToArticleList = document.querySelector(".back-to-article-list");
 
-let articleCards;
+// search articles
+const searchArticles = document.querySelector(".search-article");
 
-const loadAll = function(par=blog.data){
+let articleCards;
+let btnArticleActive = 'all';
+
+const renderBlogList = function(par=blog.data){
     let html = ``;
     par.forEach(function(dat){
         html+=`
@@ -35,7 +39,7 @@ const loadAll = function(par=blog.data){
 
 const loadSpecific = function(dataCompare){
     const tutorial = blog.data.filter((dat) => dat.type === dataCompare);
-    loadAll(tutorial)
+    renderBlogList(tutorial)
 }
 
 const openArticle = function(){
@@ -56,7 +60,6 @@ const openArticle = function(){
 
             blogItems.classList.remove('hidden');
 
-
         })
     })
 }
@@ -69,15 +72,13 @@ const closeArticle = function(){
 }
 
 window.addEventListener('load',function(){
-    loadAll();
+    renderBlogList();
     articleCards = document.querySelectorAll(".article-card");
 
     openArticle();
     closeArticle();
-    
-
-    
 })
+
 
 buttonsCategory.forEach(function(btn){
     btn.addEventListener('click',function(){
@@ -85,7 +86,9 @@ buttonsCategory.forEach(function(btn){
             bt.classList.remove('btn-active');
             !bt.classList.contains('btn-outline-active') && bt.classList.add('btn-outline-active');
         })
-        btn.dataset.category !== 'all' ? loadSpecific(btn.dataset.category) : loadAll();
+        searchArticles.value = '';
+        btnArticleActive = btn.dataset.category;
+        btn.dataset.category !== 'all' ? loadSpecific(btn.dataset.category) : renderBlogList();
         btn.classList.remove('btn-outline-active');
         btn.classList.add('btn-active');
 
@@ -96,3 +99,9 @@ buttonsCategory.forEach(function(btn){
     })
 })
 
+
+
+searchArticles.addEventListener('keyup',function(){
+    const data = blog.data.filter(bd=>bd.title.toUpperCase().includes(this.value.toUpperCase()));
+    renderBlogList(data.filter(d=>btnArticleActive !== 'all' ? d.type === btnArticleActive:d));
+})

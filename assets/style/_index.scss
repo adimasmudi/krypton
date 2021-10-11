@@ -102,6 +102,7 @@
 }
 
 .offers{
+    background:$main-color-darker;
     .image{
         height:100%;
     }
@@ -149,6 +150,9 @@
     }
 }
 
+.member{
+    background-color : $main-color-lighter;
+}
 
 // testimonials
 .testimonials{

@@ -141,10 +141,3 @@ export const data = [
         timeUpload : '2 days ago'
     }
 ]
-
-export const blogContent = [
-    {
-        'title' : '',
-        'content' : ''
-    }
-]

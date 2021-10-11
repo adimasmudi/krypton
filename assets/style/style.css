@@ -474,6 +474,10 @@ body::-webkit-scrollbar-thumb {
   width: 100%;
 }
 
+.offers {
+  background: #00061b;
+}
+
 .offers .image {
   height: 100%;
 }
@@ -516,6 +520,10 @@ body::-webkit-scrollbar-thumb {
 
 .web-path .list-every-path .the-list ul li, .android-path .list-every-path .the-list ul li, .ui-ux-path .list-every-path .the-list ul li, .data-science-path .list-every-path .the-list ul li {
   list-style-type: none;
+}
+
+.member {
+  background-color: #000d3b;
 }
 
 .testimonials #testimonial-slider {
@@ -2042,6 +2050,10 @@ body {
   margin: 30px 0;
 }
 
+.home-section .menu-tools h3 {
+  margin-left: 30px;
+}
+
 .home-section .menu-tools .tools {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2103,7 +2115,14 @@ body {
           box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
 }
 
+.home-section .course-offers .course-item:hover {
+  -webkit-transform: scale(1.01);
+          transform: scale(1.01);
+}
+
 .home-section .course-offers .course-item img {
+  width: 280px;
+  height: 250px;
   display: block;
   margin: 10px auto;
   border-radius: 20px;
@@ -2141,11 +2160,19 @@ body {
           flex-direction: row;
 }
 
+.appear-when-hover span {
+  line-height: 80px;
+}
+
+.appear-when-hover span svg {
+  height: 15px;
+}
+
 .appear-when-hover div {
   height: 80px;
+  background: #fff;
   -webkit-box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
           box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
-  display: none;
   text-align: center;
 }
 
@@ -2158,20 +2185,77 @@ body {
 }
 
 .appear-when-hover div:nth-child(3) {
-  width: 150px;
+  width: 200px;
+  height: 150px;
 }
 
-.appear-when-hover div span {
-  line-height: 80px;
+.appear-when-hover div:nth-child(3) .profile-group {
+  height: 70px;
+  padding-bottom: 10px;
+  background-color: #fff;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-.appear-when-hover div span svg {
-  height: 15px;
+.appear-when-hover div:nth-child(3) .profile-group .name {
+  margin: 0;
+  padding: 0;
+  line-height: normal;
+}
+
+.appear-when-hover div:nth-child(3) .profile-group .level {
+  margin: 0px;
+  padding: 0;
+  height: 30px;
+  line-height: normal;
+  text-align: center;
+}
+
+.appear-when-hover div:nth-child(3) .profile-group .xp {
+  margin: 0;
+  padding: 0;
+  line-height: normal;
+}
+
+.appear-when-hover div:nth-child(3) div:nth-child(2) {
+  width: 200px;
+  background: #fff;
+  height: 40px;
+  line-height: 40px;
+}
+
+.appear-when-hover div:nth-child(3) div:nth-child(2):hover {
+  cursor: pointer;
+  background: #cacaca;
+}
+
+.appear-when-hover div:nth-child(3) .exit {
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  background: #fff;
+}
+
+.appear-when-hover div:nth-child(3) .exit:hover {
+  cursor: pointer;
+  background: #cacaca;
 }
 
 @media (max-width: 420px) {
   .sidebar li .tooltip {
     display: none;
+  }
+  .menu-tools h3 {
+    margin: 0;
   }
 }
 
@@ -2191,7 +2275,7 @@ body {
 }
 
 .my-learning .learning-list {
-  height: 320px;
+  height: 380px;
   width: 300px;
   margin: 10px;
   border-radius: 20px;
@@ -2200,9 +2284,15 @@ body {
 }
 
 .my-learning .learning-list img {
+  height: 250px;
+  width: 280px;
   display: block;
   margin: 10px auto;
   border-radius: 20px;
+}
+
+.my-learning .learning-list h4 {
+  margin: 10px 0 10px 10px;
 }
 
 .my-learning .learning-list .progress-bar {
@@ -2219,7 +2309,6 @@ body {
 
 .my-learning .learning-list .progress-bar .bar {
   height: 2px;
-  width: 80%;
   background-image: -webkit-gradient(linear, left top, right top, from(#00061b), to(#000d3b));
   background-image: linear-gradient(to right, #00061b, #000d3b);
 }
@@ -2269,7 +2358,7 @@ body {
 }
 
 .challenge-list .challenge-item {
-  height: 320px;
+  height: 260px;
   width: 300px;
   margin: 10px;
   border-radius: 20px;
@@ -2279,8 +2368,13 @@ body {
 
 .challenge-list .challenge-item img {
   display: block;
+  width: 280px;
   margin: 10px auto;
   border-radius: 20px;
+}
+
+.challenge-list .challenge-item h4 {
+  margin-left: 10px;
 }
 
 .challenge-list .challenge-item .start-challenge {
@@ -2291,6 +2385,8 @@ body {
   float: right;
   clear: both;
   margin-right: 10px;
+  position: relative;
+  bottom: -10px;
 }
 
 .forum-list {

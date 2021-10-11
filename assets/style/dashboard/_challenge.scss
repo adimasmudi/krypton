@@ -6,7 +6,7 @@
   justify-content: space-evenly;
   
   .challenge-item{
-    height : 320px;
+    height : 260px;
     width: 300px;
     margin:10px;
     border-radius:20px;
@@ -14,8 +14,13 @@
 
     img{
       display: block;
+      width:280px;
       margin: 10px auto;
       border-radius: 20px;
+    }
+
+    h4{
+      margin-left:10px;
     }
 
     .start-challenge{
@@ -26,6 +31,8 @@
       float:right;
       clear:both;
       margin-right:10px;
+      position:relative;
+      bottom:-10px;
     }
   }
   }
