@@ -2080,15 +2080,31 @@ body {
   border-radius: 50px;
   border: 1px solid #000929;
   padding: 0 1%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .home-section .menu-tools .tools .search input {
   border: none;
   background: transparent;
+  width: 80%;
 }
 
 .home-section .menu-tools .tools .search input:focus {
   outline: none;
+}
+
+.home-section .menu-tools .tools .search i {
+  width: 20%;
+  text-align: right;
 }
 
 .home-section .course-offers {

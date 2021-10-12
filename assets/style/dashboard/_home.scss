@@ -284,14 +284,25 @@ body{
         border-radius: 50px;
         border:1px solid $main-color;
         padding: 0 1%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
         input{
           border:none;
           background:transparent;
+          width:80%;
 
           &:focus{
             outline:none;
           }
         }
+
+        i{
+          width:20%;
+          text-align: right;
+          
+        }
+
       }
     }
     
