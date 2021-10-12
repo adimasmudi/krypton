@@ -235,6 +235,29 @@ body::-webkit-scrollbar-thumb {
   border-radius: 50%;
 }
 
+.error-message {
+  margin: 100px auto;
+}
+
+.error-message .message {
+  text-align: center;
+  display: block;
+  margin: 0px auto;
+  line-height: 30px;
+  color: #a1a1a1;
+  font-size: 1.5rem;
+}
+
+.error-message .message svg {
+  font-size: 2rem;
+}
+
+@media screen and (max-width: 786px) {
+  .error-message .message {
+    font-size: 1rem;
+  }
+}
+
 .circle-left {
   height: 23vh;
   width: 23vh;
@@ -1762,6 +1785,29 @@ body::-webkit-scrollbar-thumb {
   width: 30px;
   height: 30px;
   border-radius: 50%;
+}
+
+.error-message {
+  margin: 100px auto;
+}
+
+.error-message .message {
+  text-align: center;
+  display: block;
+  margin: 0px auto;
+  line-height: 30px;
+  color: #a1a1a1;
+  font-size: 1.5rem;
+}
+
+.error-message .message svg {
+  font-size: 2rem;
+}
+
+@media screen and (max-width: 786px) {
+  .error-message .message {
+    font-size: 1rem;
+  }
 }
 
 * {
