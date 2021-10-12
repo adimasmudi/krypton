@@ -252,6 +252,13 @@ body::-webkit-scrollbar-thumb
     border-radius:50%;
 }
 
+.scale-hover{
+    &:hover{
+        transform : scale(1.01);
+        cursor:pointer;
+      }
+}
+
 // error message
 .error-message{
     margin:100px auto;

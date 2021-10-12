@@ -235,6 +235,12 @@ body::-webkit-scrollbar-thumb {
   border-radius: 50%;
 }
 
+.scale-hover:hover {
+  -webkit-transform: scale(1.01);
+          transform: scale(1.01);
+  cursor: pointer;
+}
+
 .error-message {
   margin: 100px auto;
 }
@@ -474,10 +480,19 @@ body::-webkit-scrollbar-thumb {
 .banner {
   padding-top: 10%;
   height: 90vh;
+  -webkit-transition: 0.8s;
+  transition: 0.8s;
 }
 
 .banner img {
   width: 80%;
+}
+
+.banner img:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-transition: 0.8s;
+  transition: 0.8s;
 }
 
 .content {
@@ -656,6 +671,11 @@ body::-webkit-scrollbar-thumb {
   background-size: cover;
 }
 
+.testimonials .owl-theme .owl-controls .owl-page:nth-child(4) span {
+  background: url("../img/home picture/dev/dev4.jpg") no-repeat;
+  background-size: cover;
+}
+
 .testimonials .owl-theme .owl-controls .owl-page:hover span {
   opacity: 0.5;
 }
@@ -755,11 +775,17 @@ form .inner-form .input-field .btn-search svg {
 
 .article-list .inner-article-list .article-card {
   width: 20rem;
-  height: 14rem;
+  height: 15rem;
   margin: 20px;
+  padding: 10px;
 }
 
 .article-list .inner-article-list .article-card:hover {
+  -webkit-transform: scale(1.01);
+          transform: scale(1.01);
+  -webkit-box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
+          box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
   cursor: pointer;
 }
 
@@ -1532,6 +1558,9 @@ form .inner-form .input-field .btn-search svg {
 }
 
 @media screen and (max-width: 765px) {
+  .banner {
+    height: 100%;
+  }
   .contact-form {
     border-radius: 20px;
   }
@@ -1785,6 +1814,12 @@ body::-webkit-scrollbar-thumb {
   width: 30px;
   height: 30px;
   border-radius: 50%;
+}
+
+.scale-hover:hover {
+  -webkit-transform: scale(1.01);
+          transform: scale(1.01);
+  cursor: pointer;
 }
 
 .error-message {
@@ -2177,17 +2212,51 @@ body {
           box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
 }
 
-.home-section .course-offers .course-item:hover {
-  -webkit-transform: scale(1.01);
-          transform: scale(1.01);
-}
-
 .home-section .course-offers .course-item img {
   width: 280px;
   height: 250px;
   display: block;
   margin: 10px auto;
   border-radius: 20px;
+}
+
+.home-section .course-offers .course-item .ratings {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding-left: 10px;
+}
+
+.home-section .course-offers .course-item .ratings .stars-outer {
+  position: relative;
+  display: inline-block;
+}
+
+.home-section .course-offers .course-item .ratings .stars-outer::before {
+  content: "\f005 \f005 \f005 \f005 \f005";
+  font-family: "Font Awesome 5 Pro";
+  font-weight: 900;
+  color: #ccc;
+}
+
+.home-section .course-offers .course-item .ratings .stars-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+}
+
+.home-section .course-offers .course-item .ratings .stars-inner::before {
+  content: "\f005 \f005 \f005 \f005 \f005";
+  font-family: "Font Awesome 5 pro";
+  font-weight: 900;
+  color: #f8ce0b;
 }
 
 .home-section .course-offers .course-item h4, .home-section .course-offers .course-item span, .home-section .course-offers .course-item p {
@@ -2488,8 +2557,19 @@ body {
   padding: 10px;
 }
 
+.forum-list .forum-item .left-side span {
+  padding: 1px 2px;
+  border-radius: 5px;
+  color: white;
+}
+
 .forum-list .forum-item .left-side .owner {
   font-size: 0.9rem;
+  font-weight: lighter;
+}
+
+.forum-list .forum-item .left-side .time {
+  font-size: 0.7rem;
   font-weight: lighter;
 }
 
@@ -2502,9 +2582,9 @@ body {
 }
 
 @media screen and (max-width: 785px) {
-  .forum-item {
+  .forum-list .forum-item {
     width: 90%;
-    height: 200px;
+    height: 300px;
   }
 }
 

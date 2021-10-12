@@ -17,7 +17,7 @@ $(document).ready(function () {
         $('.bi-caret-down').toggleClass('rotate-180-deg');
     })
 
-    $(window).on('scroll',function(){
+    const iconScroll = function(){
         if($(window).width() >= 1080){
             if(scrollY > 1800 && scrollY <= 5000 ){
                 for(item of $('.icon-path')){
@@ -36,8 +36,16 @@ $(document).ready(function () {
         }else{
             $('.icon-gradasi').css('visibility','hidden');
         }
+    }
+
+    $(window).on('scroll',function(){
+        iconScroll();
         
     });
+
+    $(window).on('resize',function(){
+        iconScroll();
+    })
 
         
     let a = 0;

@@ -40,7 +40,7 @@ const renderBlogList = function(par=blog.data){
         html+=`
         <div class="article-card">
             <img src="${dat.imageUrl}" alt="article">
-            <h6>${dat.title}</h6>
+            <h6>${dat.title.length > 30 ? dat.title.substring(0,30) + '..' : dat.title}</h6>
             <div class="d-flex justify-content-between">
                 <span>${dat.author}</span>
                 <span>${dat.timeUpload}</span>
@@ -64,9 +64,10 @@ const openArticle = function(){
             document.body.scrollTop = 0; // For Safari
             document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
             
-            const articleSelected = articlecard.children[1].innerHTML;
+            const articleSelected = articlecard.children[0].src.split('/').slice(-4).join('/');
+            
 
-            const articleSelectedDetail = blog.data.filter((data) => data.title === articleSelected);
+            const articleSelectedDetail = blog.data.filter((data) => data.imageUrl === articleSelected);
             menuArticle.classList.add('hidden');
             
             imgHeader.style.background = `url(assets/img/blog/${articleSelectedDetail[0].imageUrl.split('/')[3]})`
@@ -114,7 +115,6 @@ buttonsCategory.forEach(function(btn){
         closeArticle();
     })
 })
-
 
 
 searchArticles.addEventListener('keyup',function(){

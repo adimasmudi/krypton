@@ -34,12 +34,7 @@ closeBtn.addEventListener("click", ()=>{
     menuBtnChange();//calling the function(optional)
 });
 
-//   searchBtn.addEventListener("click", ()=>{ // Sidebar open when you click on the search iocn
-//     sidebar.classList.toggle("open");
-//     menuBtnChange(); //calling the function(optional)
-//   });
 
-// following are the code to change sidebar button(optional)
 function menuBtnChange() {
     if(sidebar.classList.contains("open")){
         closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");//replacing the iocns class
@@ -51,15 +46,7 @@ function menuBtnChange() {
 // appear when hover
 const btns = [...document.querySelector('.nav-group').children];
 
-// const displayWhenHover = (button,index,theEvent,display)=>{
-//     const elements = [...document.querySelector('.appear-when-hover').children]
-//     button.addEventListener(theEvent,()=>{
-//         elements.forEach((child,idx)=>{
-//             if(idx !== index)
-//         });
-        
-//     })
-// }
+
 const elements = [...document.querySelector('.appear-when-hover').children];
 
 const toggleClick = function(index){
@@ -93,13 +80,29 @@ const courseOffersHome = document.querySelector(".course-offers");
 const loadHomeOffers = function(dataType="all",thedata = homeData.homeData){
     let offersList = ``;
     const dataProcess = dataType === "all" ? thedata : thedata.filter((hd)=>hd.category === dataType)
+
+    // rating process
+    const starsTotal = 5;
+    
+
+
     dataProcess.forEach(function(data){
+
+        const starPercentage = (data.rating / starsTotal) * 100;
+
+        const starPercentageRounded = `${Math.round(starPercentage / 10) * 10}%`;
+
         offersList+=`
-        <div class="course-item">
+        <div class="course-item scale-hover">
             <img src="${data.photoUrl}" alt="course image">
             <h4 class="course-title">${data.title.length > 29 ? data.title.substring(0,28) + '..' : data.title}</h4>
             <span class="course-price">${data.price}</span>
-            <p class="rating">${data.rating}</p>
+            <div class="ratings">
+                <div class="stars-outer">
+                    <div class="stars-inner" style="width:${starPercentageRounded}"></div>
+                </div>
+                <p class="rating">${data.rating}</p>
+            </div>
         </div>
         `;
     })
@@ -115,7 +118,7 @@ const myLearningRender = function( dataType="all",thedata = homeData.myLearning)
     dataProcess.length === 0 && renderError(`Sorry, you've not purchased course about "${dataType}" yet`)
     dataProcess.forEach(function(learningData){
         html+=`
-        <div class="learning-list">
+        <div class="learning-list scale-hover">
             <img src="${learningData.photoUrl}" alt="course image">
             <h4>${learningData.title.length > 29 ? learningData.title.substring(0,28) + '..' : learningData.title}</h4>
             <div class="progress-bar">
@@ -140,7 +143,7 @@ const challengeFunction = function( dataType="all", thedata = homeData.challenge
     dataProcess.length === 0 && renderError(`the challenge about "${dataType}" is not available`)
     dataProcess.forEach((chal)=>{
         html+=`
-        <div class="challenge-item">
+        <div class="challenge-item scale-hover">
             <img src="${chal.photoUrl}" alt="challenge image">
             <h4>${chal.title}</h4>
             <button class="start-challenge btn-active">start challenge</button>
@@ -151,9 +154,41 @@ const challengeFunction = function( dataType="all", thedata = homeData.challenge
     challengeList.innerHTML = html;
 }
 
+const forumList = document.querySelector(".forum-list");
+
+const renderForumList = function(dataType="all", thedata = homeData.forum){
+    let html = ``;
+    let colorStatus = ``;
+    
+    const dataProcess = dataType === "all" ? thedata : thedata.filter((hd)=>hd.category === dataType)
+    dataProcess.length === 0 && renderError(`there is not discussion about "${dataType}"`)
+    dataProcess.forEach(function(forum){
+        colorStatus = forum.status === 'solved' ? 'green' : 'red';
+        html+=`
+            <div class="forum-item scale-hover">
+              <div class="left-side">
+                <h3>${forum.title.length > 60 ? forum.title.substring(0,60) + '..' : forum.title}</h3>
+                <span style="background-color:${colorStatus}">${forum.status}</span>
+                <p class="owner">by : ${forum.author}</p>
+                <p class="time">asked ${forum.time.split(' ').slice(0,3).join(' ')} at ${forum.time.split(' ')[3]}</p>
+              </div>
+              <div class="right-side">
+                <h5>keywords</h5>
+                <div class="keywords">
+                    ${forum.tag.map((thetag)=>`<span>#${thetag}</span>`).join(' ')}
+                </div>
+              </div>
+            </div>
+        `;
+    })
+
+    forumList.innerHTML = html;
+}
+
 courseOffersHome && loadHomeOffers();
 myLearnings && myLearningRender();
 challengeList && challengeFunction();
+forumList && renderForumList();
 
 // event menu tools
 const categoryOptions = document.querySelector("#category");
@@ -167,6 +202,7 @@ const searchResults = function(valueSearch,page,dataType='all'){
     if(page === homeData.homeData) courseOffersHome && loadHomeOffers(categoryOptions.value,data);
     else if(page === homeData.myLearning) myLearnings && myLearningRender(categoryOptions.value,data);
     else if(page === homeData.challenge) challengeList && challengeFunction(categoryOptions.value,data);
+    else if(page === homeData.forum) forumList && renderForumList(categoryOptions.value,data);
     
     data.length === 0 && renderError(`Sorry, your search for "${valueSearch}" is not available`)
     
@@ -181,6 +217,7 @@ categoryOptions.addEventListener('change',function(){
     courseOffersHome && loadHomeOffers(this.value);
     myLearnings && myLearningRender(this.value);
     challengeList && challengeFunction(this.value);
+    forumList && renderForumList(this.value)
 })
 
 search.addEventListener('keyup',function(){
@@ -190,4 +227,92 @@ search.addEventListener('keyup',function(){
     if(thePage === 'home') searchResults(valueSearch,homeData.homeData);
     else if(thePage === 'learning') searchResults(valueSearch,homeData.myLearning);
     else if(thePage === 'challenge') searchResults(valueSearch,homeData.challenge);
+    else if(thePage === 'forum') searchResults(valueSearch,homeData.forum)
+})
+
+
+// console.log(new Date('October 15, 1996 05:35:32').getTime())
+// console.log(new Date('October 19, 2002 05:35:32').getTime())
+
+// console.log(new Date(homeData.forum[2].date))
+// homeData.forum.forEach(function(forData){
+//     console.log(new Date(forData.time).getTime())
+// })
+
+const filterBy = document.querySelector("#filter-by");
+
+const renderByStatus = function(dataType="all", thedata = homeData.forum, statusFilter){
+    let html = ``;
+    let colorStatus = ``;
+    
+    const dataProcess = dataType === "all" ? thedata.filter(d=>statusFilter.includes(d)) : thedata.filter((hd)=>hd.category === dataType && statusFilter.includes(hd))
+    dataProcess.length === 0 && renderError(`there is not discussion about "${dataType}"`)
+    dataProcess.forEach(function(forum){
+        colorStatus = forum.status === 'solved' ? 'green' : 'red';
+        html+=`
+            <div class="forum-item scale-hover">
+              <div class="left-side">
+                <h3>${forum.title.length > 60 ? forum.title.substring(0,60) + '..' : forum.title}</h3>
+                <span style="background-color:${colorStatus}">${forum.status}</span>
+                <p class="owner">by : ${forum.author}</p>
+                <p class="time">asked ${forum.time.split(' ').slice(0,3).join(' ')} at ${forum.time.split(' ')[3]}</p>
+              </div>
+              <div class="right-side">
+                <h5>keywords</h5>
+                <div class="keywords">
+                    ${forum.tag.map((thetag)=>`<span>#${thetag}</span>`).join(' ')}
+                </div>
+              </div>
+            </div>
+        `;
+    });
+
+    forumList.innerHTML = html;
+}
+
+const renderForumSort = function(param){
+    let html = ``;
+    let colorStatus = ``;
+    param.forEach(function(par){
+        const toRender = homeData.forum.filter(dat=>new Date(dat.time).getTime() === par)[0]
+        colorStatus = toRender.status === 'solved' ? 'green' : 'red';
+        
+        html+=`
+        <div class="forum-item scale-hover">
+            <div class="left-side">
+            <h3>${toRender.title.length > 60 ? toRender.title.substring(0,60) + '..' : toRender.title}</h3>
+            <span style="background-color:${colorStatus}">${toRender.status}</span>
+            <p class="owner">by : ${toRender.author}</p>
+            <p class="time">asked ${toRender.time.split(' ').slice(0,3).join(' ')} at ${toRender.time.split(' ')[3]}</p>
+            </div>
+            <div class="right-side">
+            <h5>keywords</h5>
+            <div class="keywords">
+                ${toRender.tag.map((thetag)=>`<span>#${thetag}</span>`).join(' ')}
+            </div>
+            </div>
+        </div>
+        `;
+    })
+
+    forumList.innerHTML = html;
+}
+
+
+
+const filterFunction = function(param){
+    const category = document.querySelector("#category");
+    
+    const arrTime = [...homeData.forum.map((fr)=>new Date(fr.time).getTime())]
+    const statusFilter = homeData.forum.filter(dat=>dat.status === param)
+
+    if(param === 'oldest') renderForumSort(arrTime.sort(function(a,b) {return a-b}));
+    if(param === 'newest') renderForumSort(arrTime.sort(function(a,b) {return b-a}));
+    if(param === 'solved' || param === 'unsolved') renderByStatus(category.value,homeData.forum,statusFilter);
+    
+    
+}
+
+filterBy && filterBy.addEventListener('change',function(){
+    filterFunction(this.value)
 })

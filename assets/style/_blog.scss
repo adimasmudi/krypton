@@ -80,10 +80,14 @@ form {
         justify-content: space-evenly;
         .article-card{
             width:20rem;
-            height:14rem;
+            height:15rem;
             margin:20px;
+            padding:10px;
 
             &:hover{
+                transform: scale(1.01);
+                box-shadow:5px 5px 20px rgba(0, 0, 0, 0.3);
+                border-radius: 20px;
                 cursor:pointer;
             }
     
