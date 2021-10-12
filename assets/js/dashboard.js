@@ -1,5 +1,5 @@
-import {homeData, myLearning, challenge} from './data/homeData.js';
-
+import * as homeData from './data/homeData.js';
+// {homeData, myLearning, challenge}
 
 let sidebar = document.querySelector(".sidebar");
 let closeBtn = document.querySelector("#btn");
@@ -76,7 +76,7 @@ document.querySelector("#log_out").addEventListener('click',()=>{
 // home data handeling
 const courseOffersHome = document.querySelector(".course-offers");
 
-const loadHomeOffers = function(dataType="all",thedata = homeData){
+const loadHomeOffers = function(dataType="all",thedata = homeData.homeData){
     let offersList = ``;
     const dataProcess = dataType === "all" ? thedata : thedata.filter((hd)=>hd.category === dataType)
     dataProcess.forEach(function(data){
@@ -95,7 +95,7 @@ const loadHomeOffers = function(dataType="all",thedata = homeData){
 
 const myLearnings = document.querySelector(".my-learning");
 
-const myLearningRender = function( dataType="all",thedata = myLearning){
+const myLearningRender = function( dataType="all",thedata = homeData.myLearning){
     let html = ``;
     const dataProcess = dataType === "all" ? thedata : thedata.filter((hd)=>hd.category === dataType)
     dataProcess.forEach(function(learningData){
@@ -119,7 +119,7 @@ const myLearningRender = function( dataType="all",thedata = myLearning){
 
 const challengeList = document.querySelector(".challenge-list");
 
-const challengeFunction = function( dataType="all", thedata = challenge){
+const challengeFunction = function( dataType="all", thedata = homeData.challenge){
     let html = ``;
     const dataProcess = dataType === "all" ? thedata : thedata.filter((hd)=>hd.category === dataType)
     dataProcess.forEach((chal)=>{
@@ -148,9 +148,9 @@ const searchResults = function(valueSearch,page,dataType='all'){
     const dataProcess = dataType === "all" ? page : page.filter((hd)=>hd.category === dataType)
     const data = dataProcess.filter(dp=>dp.title.toUpperCase().includes(valueSearch.toUpperCase()));
 
-    if(page === homeData) courseOffersHome && loadHomeOffers(categoryOptions.value,data);
-    else if(page === myLearning) myLearnings && myLearningRender(categoryOptions.value,data);
-    else if(page === challenge) challengeList && challengeFunction(categoryOptions.value,data);
+    if(page === homeData.homeData) courseOffersHome && loadHomeOffers(categoryOptions.value,data);
+    else if(page === homeData.myLearning) myLearnings && myLearningRender(categoryOptions.value,data);
+    else if(page === homeData.challenge) challengeList && challengeFunction(categoryOptions.value,data);
     
 }
 
@@ -164,7 +164,7 @@ categoryOptions.addEventListener('change',function(){
 search.addEventListener('keyup',function(){
     const valueSearch = search.value;
     const thePage = window.location.href.split('/')[4].split('.')[0];
-    if(thePage === 'home') searchResults(valueSearch,homeData);
-    else if(thePage === 'learning') searchResults(valueSearch,myLearning);
-    else if(thePage === 'challenge') searchResults(valueSearch,challenge);
+    if(thePage === 'home') searchResults(valueSearch,homeData.homeData);
+    else if(thePage === 'learning') searchResults(valueSearch,homeData.myLearning);
+    else if(thePage === 'challenge') searchResults(valueSearch,homeData.challenge);
 })
