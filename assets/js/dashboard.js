@@ -209,15 +209,18 @@ const searchResults = function(valueSearch,page,dataType='all'){
     
 }
 
+const filterBy = document.querySelector("#filter-by");
 
 
 categoryOptions.addEventListener('change',function(){
     search.value = '';
     errorContainer.innerHTML = '';
+    filterBy.value = 'no filter';
     courseOffersHome && loadHomeOffers(this.value);
     myLearnings && myLearningRender(this.value);
     challengeList && challengeFunction(this.value);
     forumList && renderForumList(this.value)
+    
 })
 
 search.addEventListener('keyup',function(){
@@ -239,7 +242,7 @@ search.addEventListener('keyup',function(){
 //     console.log(new Date(forData.time).getTime())
 // })
 
-const filterBy = document.querySelector("#filter-by");
+
 
 const renderByStatus = function(dataType="all", thedata = homeData.forum, statusFilter){
     let html = ``;
