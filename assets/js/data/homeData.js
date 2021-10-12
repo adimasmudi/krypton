@@ -15,7 +15,7 @@ export const homeData = [
     },
     {
         category : 'web',
-        photoUrl : '../assets/img/dashboard/home/vue.jpeg',
+        photoUrl : '../assets/img/dashboard/home/svelte-logo.jpg',
         title : 'getting started with svelte',
         price : '$35',
         rating : '4.7'

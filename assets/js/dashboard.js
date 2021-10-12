@@ -163,7 +163,7 @@ categoryOptions.addEventListener('change',function(){
 
 search.addEventListener('keyup',function(){
     const valueSearch = search.value;
-    const thePage = window.location.href.split('/')[4].split('.')[0];
+    const thePage = window.location.href.split('/').pop().split('.')[0];
     if(thePage === 'home') searchResults(valueSearch,homeData.homeData);
     else if(thePage === 'learning') searchResults(valueSearch,homeData.myLearning);
     else if(thePage === 'challenge') searchResults(valueSearch,homeData.challenge);
