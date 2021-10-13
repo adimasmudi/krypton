@@ -1,4 +1,11 @@
-
+.add-forum{
+  .btn-add{
+    height:30px;
+    width:130px;
+    border:none;
+    margin:0 0 10px 5%;
+  }
+}
 .forum-list{
     display:flex;
     flex-direction: column;

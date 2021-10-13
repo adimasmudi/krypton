@@ -119,7 +119,8 @@ buttonsCategory.forEach(function(btn){
 
 searchArticles.addEventListener('keyup',function(){
     errorContainer.innerHTML = '';
-    const data = blog.data.filter(bd=>bd.title.toUpperCase().includes(this.value.toUpperCase()));
+    const dataByCategory = blog.data.filter(d => btnArticleActive === 'all' ? d : d.type === btnArticleActive)
+    const data = dataByCategory.filter(bd=>bd.title.toUpperCase().includes(this.value.toUpperCase()));
     data.length === 0 && renderError(`there is not any blog about "${this.value}"`)
     renderBlogList(data.filter(d=>btnArticleActive !== 'all' ? d.type === btnArticleActive:d));
 })

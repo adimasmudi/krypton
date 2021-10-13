@@ -232,6 +232,19 @@ body::-webkit-scrollbar-thumb
     box-shadow: 0 19px 38px rgba(0,0,0,0.10), 0 15px 12px rgba(0,0,0,0.02);
 }
 
+.input-text{
+    border:1px solid rgb(194, 194, 194);
+    padding-left:5px;
+
+    &:focus{
+        border : 1px solid $main-color;
+        box-shadow: none;
+        outline:none;
+    }
+}
+
+
+
 
 .footer{
     background:#00061b ;

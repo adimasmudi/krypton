@@ -108,7 +108,11 @@ const loadHomeOffers = function(dataType="all",thedata = homeData.homeData){
     })
 
     courseOffersHome.innerHTML = offersList;
+    
 }
+
+
+
 
 const myLearnings = document.querySelector(".my-learning");
 
@@ -134,6 +138,7 @@ const myLearningRender = function( dataType="all",thedata = homeData.myLearning)
 
     myLearnings.innerHTML = html;
 }
+
 
 const challengeList = document.querySelector(".challenge-list");
 
@@ -190,9 +195,24 @@ myLearnings && myLearningRender();
 challengeList && challengeFunction();
 forumList && renderForumList();
 
+const whenClick = function(){
+    courseOffersHome && window.addEventListener('DOMContentLoaded',function(){
+        const courseItems = document.querySelectorAll('.course-item');
+        courseItems.forEach(function(item){
+            item.addEventListener('click',function(){
+                window.location.href = `confirm.html?${item.children[1].innerHTML}`;
+            })
+        })
+    })
+}
+
+whenClick();
+
+
 // event menu tools
 const categoryOptions = document.querySelector("#category");
-const search = document.querySelector(".search").children[0];
+const searchVal = document.querySelector(".search");
+const search = searchVal?.children[0];
 
 const searchResults = function(valueSearch,page,dataType='all'){
     
@@ -212,26 +232,6 @@ const searchResults = function(valueSearch,page,dataType='all'){
 const filterBy = document.querySelector("#filter-by");
 
 
-categoryOptions.addEventListener('change',function(){
-    search.value = '';
-    errorContainer.innerHTML = '';
-    filterBy.value = 'no filter';
-    courseOffersHome && loadHomeOffers(this.value);
-    myLearnings && myLearningRender(this.value);
-    challengeList && challengeFunction(this.value);
-    forumList && renderForumList(this.value)
-    
-})
-
-search.addEventListener('keyup',function(){
-    const valueSearch = search.value;
-    errorContainer.innerHTML = '';
-    const thePage = window.location.href.split('/').pop().split('.')[0];
-    if(thePage === 'home') searchResults(valueSearch,homeData.homeData);
-    else if(thePage === 'learning') searchResults(valueSearch,homeData.myLearning);
-    else if(thePage === 'challenge') searchResults(valueSearch,homeData.challenge);
-    else if(thePage === 'forum') searchResults(valueSearch,homeData.forum)
-})
 
 
 // console.log(new Date('October 15, 1996 05:35:32').getTime())
@@ -276,7 +276,7 @@ const renderByStatus = function(dataType="all", thedata = homeData.forum, status
 const renderForumSort = function(param){
     let html = ``;
     let colorStatus = ``;
-    param.forEach(function(par){
+    param.filter(p => p !== '').forEach(function(par){
         const toRender = homeData.forum.filter(dat=>new Date(dat.time).getTime() === par)[0]
         colorStatus = toRender.status === 'solved' ? 'green' : 'red';
         
@@ -305,10 +305,8 @@ const renderForumSort = function(param){
 
 const filterFunction = function(param){
     const category = document.querySelector("#category");
-    
-    const arrTime = [...homeData.forum.map((fr)=>new Date(fr.time).getTime())]
+    const arrTime = [...homeData.forum.map((fr)=>fr.category === category.value ?  new Date(fr.time).getTime() : '')]
     const statusFilter = homeData.forum.filter(dat=>dat.status === param)
-
     if(param === 'oldest') renderForumSort(arrTime.sort(function(a,b) {return a-b}));
     if(param === 'newest') renderForumSort(arrTime.sort(function(a,b) {return b-a}));
     if(param === 'solved' || param === 'unsolved') renderByStatus(category.value,homeData.forum,statusFilter);
@@ -318,4 +316,124 @@ const filterFunction = function(param){
 
 filterBy && filterBy.addEventListener('change',function(){
     filterFunction(this.value)
+})
+
+// fetch from API
+const getCountry = async function(){
+    const res = await fetch("https://restcountries.com/v3/all" );
+    const country = res.json();
+    return country;
+}
+
+const country = document.querySelector("#country");
+const countryCode = document.querySelector("#country-code");
+
+
+getCountry().then(countries=>{
+    let html = ``;
+    const countryList = countries.map(c => c.name.common).sort();
+        countryList.forEach(con=>{
+            html+=`
+            <option class="option-select">${con}</option>
+            `;
+        })
+   
+    country && country.insertAdjacentHTML("beforeend",html)
+
+})
+
+country && country.addEventListener('change',function(){
+    getCountry().then(a => {
+        const c = a.filter(b => b.name.common == country.value);
+        // valuePhone.value = `+${c[0].callingCodes[0]}`;
+       
+        countryCode.value = c[0].idd.root+c[0].idd.suffixes.join('');
+    });
+})
+
+
+// confirm page
+
+const menuBtns = document.querySelectorAll(".btn-menu");
+
+menuBtns.forEach(btn => {
+    btn.addEventListener('click',function(){
+        const productContent = document.querySelectorAll(".product-content");
+        productContent.forEach(pro => {
+            pro.classList.add('hidden');
+            menuBtns.forEach(bt => bt.classList.remove('menu-toggle__active'))
+        });
+
+        productContent.forEach(product => {
+            if(product.dataset.menu === btn.innerHTML){
+                product.classList.remove('hidden')
+                btn.classList.add('menu-toggle__active')
+            }
+            
+        })
+        
+
+    })
+})
+
+const selectedItem = window.location.href.split('?').pop().split('%20').join(' ')
+const productDetails = document.querySelector(".product-details");
+const renderConfirm = function(data){
+
+    const starRating = `${Math.round((((data[0].rating / 5) * 100) / 10) * 10)}%`;
+
+    let html = `
+    <div class="upper-details">
+        <div class="image-container">
+            <img src="${data[0].photoUrl}" alt="product photo">
+        </div>
+        <div class="details">
+            <div class="information">
+                <p>Category : ${data[0].category}</p>
+                <p>Price : ${data[0].price}</p>
+                <div class="ratings">
+                    <div class="stars-outer">
+                        <div class="stars-inner" style="width:${starRating}"></div>
+                    </div>
+                    <p class="rating">(${data[0].rating})</p>
+                </div>
+            </div>
+            <div class="btn-choices">
+                <button class="btn-outline-active">Add to Cart</button>
+                <button class="btn-active">Enroll</button>
+            </div>
+        </div>
+    </div>
+    <div class="title">
+        <h3>${data[0].title}</h3>
+    </div>
+    `;
+
+
+    productDetails.insertAdjacentHTML('afterbegin',html);
+}
+productDetails && renderConfirm(homeData.homeData.filter(data => data.title === selectedItem))
+
+// category and search event
+
+categoryOptions && categoryOptions.addEventListener('change',function(){
+    search.value = '';
+    errorContainer.innerHTML = '';
+    filterBy ? filterBy.value = 'no filter' : '';
+    courseOffersHome && loadHomeOffers(this.value);
+    myLearnings && myLearningRender(this.value);
+    challengeList && challengeFunction(this.value);
+    forumList && renderForumList(this.value)
+    whenClick();
+})
+
+search && search.addEventListener('keyup',function(){
+    const valueSearch = search.value;
+    errorContainer.innerHTML = '';
+    const thePage = window.location.href.split('/').pop().split('.')[0];
+    if(thePage === 'home') searchResults(valueSearch,homeData.homeData);
+    else if(thePage === 'learning') searchResults(valueSearch,homeData.myLearning);
+    else if(thePage === 'challenge') searchResults(valueSearch,homeData.challenge);
+    else if(thePage === 'forum') searchResults(valueSearch,homeData.forum)
+    whenClick();
 })

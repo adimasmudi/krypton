@@ -1,5 +1,4 @@
 @import 'variable';
-
 #body-login-signup{
     overflow:hidden;
     
@@ -138,6 +137,7 @@
 
                     }
                 }
+                
                 .signup-page-2, .signup-page-3, .signup-page-4{
                     left : 1200px;
                 }
@@ -155,7 +155,7 @@
 
     .card-container {
         margin-bottom: 30px;
-        width: 80%;
+        width: 100%;
         height:50%;
         margin: 0 auto;
         border-radius:20px;
@@ -210,6 +210,10 @@
             /* front pane, placed above back */
             .login-form-mobile {
                 z-index: 2;
+
+                input{
+                    width:90%;
+                }
             }
             
             /* back, initially hidden pane */
@@ -229,7 +233,10 @@
 
                 .signup-page-1-mobile{
                     
-                    .phone-number{
+                    .phone-number-mobile{
+                        width:100%;
+                        display: flex;
+                        flex-direction: row;
                         
                         .value-phone{
                             width:20%;
@@ -345,6 +352,7 @@
 
     
 }
+
     
 
 @media screen and (max-width:670px){
@@ -411,3 +419,17 @@
     background-color: $main-color;
     color: white;
   }
+
+@media screen and (max-width:275){
+    .phone-number-mobile{
+        flex-direction:column;
+
+        .value-phone{
+            width:20px;
+        }
+
+        .phone-number-input{
+            width:70px;
+        }
+    }
+}

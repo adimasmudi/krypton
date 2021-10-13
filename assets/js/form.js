@@ -82,6 +82,51 @@ toLoginBtn.addEventListener('click',function(){
     },600)
 })
 
+// fetch from API
+const getCountry = async function(){
+    const res = await fetch("https://restcountries.com/v3/all" );
+    const country = res.json();
+    return country;
+}
+
+const country = document.querySelector("#country");
+const valuePhone = document.querySelector("#value-phone");
+const countryMobile = document.querySelector("#country-mobile");
+const valuePhoneMobile = document.querySelector("#value-phone-mobile");
+
+const getCountryFunction = function(){
+    getCountry().then(countries=>{
+        let html = ``;
+        const countryList = countries.map(c => c.name.common).sort();
+            countryList.forEach(con=>{
+                html+=`
+                <option class="option-select">${con}</option>
+                `;
+            })
+        if(window.screen.width < 670){
+            countryMobile.insertAdjacentHTML("beforeend",html)
+        }else if(window.screen.width >= 670){
+            country.insertAdjacentHTML("beforeend",html)
+        }
+    })
+}
+
+getCountryFunction();
+
+const addValuePhone = function(element,phone){
+    element.addEventListener('change',function(){
+        getCountry().then(a => {
+            const c = a.filter(b => b.name.common == element.value);
+            // valuePhone.value = `+${c[0].callingCodes[0]}`;
+            phone.value = c[0].idd.root+c[0].idd.suffixes.join('');
+        });
+    })
+}
+
+addValuePhone(countryMobile,valuePhoneMobile);
+addValuePhone(country,valuePhone);
+
+
 // step by step form
 const progress = document.getElementById("progress");
 const progressSteps = document.querySelectorAll(".progress-step");
@@ -130,15 +175,7 @@ prevPage4.addEventListener('click',function(){
     progress.style.width = `${(2/3)*100}%`;
 })
 
-btnSubmit.addEventListener("click",function(e){
-    e.preventDefault();
-    preloading.classList.remove('hidden');
-    setTimeout(function(){
-        location.href = 'dashboard/home.html';
-        preloading.classList.add('hidden');
-    },800);
-    
-})
+
 
 window.addEventListener('resize',function(){
     if(window.screen.width < 670){
@@ -159,6 +196,8 @@ window.addEventListener('resize',function(){
         
 
     }
+
+    getCountryFunction();
 });
 
 // step by step form
