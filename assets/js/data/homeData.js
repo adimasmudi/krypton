@@ -1,6 +1,7 @@
 export const homeData = [
     {
         category : 'web',
+        id : 1,
         photoUrl : '../assets/img/dashboard/home/react.png',
         title : 'React full course',
         price : '$58',
@@ -8,6 +9,7 @@ export const homeData = [
     },
     {
         category : 'web',
+        id : 2,
         photoUrl : '../assets/img/dashboard/home/vue.jpeg',
         title : 'vue for beginner',
         price : '$35',
@@ -15,6 +17,7 @@ export const homeData = [
     },
     {
         category : 'web',
+        id :3,
         photoUrl : '../assets/img/dashboard/home/svelte-logo.jpg',
         title : 'getting started with svelte',
         price : '$35',
@@ -22,6 +25,7 @@ export const homeData = [
     },
     {
         category : 'web',
+        id : 4,
         photoUrl : '../assets/img/dashboard/home/sass.png',
         title : 'sass full course',
         price : '$38',
@@ -29,6 +33,7 @@ export const homeData = [
     },
     {
         category : 'web',
+        id : 5,
         photoUrl : '../assets/img/dashboard/home/typescript.jpg',
         title : 'typescript full guide',
         price : '$40',
@@ -36,6 +41,7 @@ export const homeData = [
     },
     {
         category : 'web',
+        id : 6,
         photoUrl : '../assets/img/dashboard/home/html.jpg',
         title : 'html for frontend fundamental',
         price : '$20',
@@ -43,6 +49,7 @@ export const homeData = [
     },
     {
         category : 'web',
+        id : 7,
         photoUrl : '../assets/img/dashboard/home/css.jpg',
         title : 'full css mastery',
         price : '$20',
@@ -50,6 +57,7 @@ export const homeData = [
     },
     {
         category : 'web',
+        id : 8,
         photoUrl : '../assets/img/dashboard/home/nodejs.png',
         title : 'nodejs full course',
         price : '$45',
@@ -57,6 +65,7 @@ export const homeData = [
     },
     {
         category : 'web',
+        id : 9,
         photoUrl : '../assets/img/dashboard/home/php.png',
         title : 'php full course',
         price : '$40',
@@ -64,6 +73,7 @@ export const homeData = [
     },
     {
         category : 'web',
+        id : 10,
         photoUrl : '../assets/img/dashboard/home/django.png',
         title : 'django for modern backend development',
         price : '$40',
@@ -71,6 +81,7 @@ export const homeData = [
     },
     {
         category : 'apps',
+        id : 11,
         photoUrl : '../assets/img/dashboard/home/flutter.jpg',
         title : 'flutter : the complete guide',
         price : '$50',
@@ -78,6 +89,7 @@ export const homeData = [
     },
     {
         category : 'apps',
+        id : 12,
         photoUrl : '../assets/img/dashboard/home/ionic.jpg',
         title : 'complete guide of ionic',
         price : '$48',
@@ -85,6 +97,7 @@ export const homeData = [
     },
     {
         category : 'apps',
+        id : 13,
         photoUrl : '../assets/img/dashboard/home/java.png',
         title : 'build android apps with java',
         price : '$53',
@@ -92,6 +105,7 @@ export const homeData = [
     },
     {
         category : 'apps',
+        id : 14,
         photoUrl : '../assets/img/dashboard/home/kotlin.png',
         title : 'create modern android apps with kotlin',
         price : '$50',
@@ -99,6 +113,7 @@ export const homeData = [
     },
     {
         category : 'apps',
+        id : 15,
         photoUrl : '../assets/img/dashboard/home/PyQt5.png',
         title : 'build your desktop apps with PyQt5',
         price : '$52',
@@ -106,6 +121,7 @@ export const homeData = [
     },
     {
         category : 'apps',
+        id : 16,
         photoUrl : '../assets/img/dashboard/home/react-native.jpg',
         title : 'react native for beautifull apps development',
         price : '$47',
@@ -113,6 +129,7 @@ export const homeData = [
     },
     {
         category : 'UI/UX',
+        id : 17,
         photoUrl : '../assets/img/dashboard/home/figma.png',
         title : 'figma masterclass',
         price : '$28',
@@ -120,6 +137,7 @@ export const homeData = [
     },
     {
         category : 'UI/UX',
+        id : 18,
         photoUrl : '../assets/img/dashboard/home/adobe-xd.png',
         title : 'UI/UX design with adobe xd',
         price : '$25',
@@ -127,6 +145,7 @@ export const homeData = [
     },
     {
         category : 'data science',
+        id : 19,
         photoUrl : '../assets/img/dashboard/home/matplotlib.jpg',
         title : 'learn data visualization with matplotlib',
         price : '$20',
@@ -134,6 +153,7 @@ export const homeData = [
     },
     {
         category : 'data science',
+        id : 20,
         photoUrl : '../assets/img/dashboard/home/pandas.png',
         title : 'Pandas for data processing',
         price : '$35',
@@ -141,6 +161,7 @@ export const homeData = [
     },
     {
         category : 'data science',
+        id : 21,
         photoUrl : '../assets/img/dashboard/home/python.png',
         title : 'Python full course for data science',
         price : '$40',
@@ -148,6 +169,7 @@ export const homeData = [
     },
     {
         category : 'data science',
+        id : 22,
         photoUrl : '../assets/img/dashboard/home/tensorflow.png',
         title : 'tensorflow for neural network',
         price : '$50',

@@ -95,6 +95,7 @@ const loadHomeOffers = function(dataType="all",thedata = homeData.homeData){
         offersList+=`
         <div class="course-item scale-hover">
             <img src="${data.photoUrl}" alt="course image">
+            <span class="id hidden">${data.id}</span>
             <h4 class="course-title">${data.title.length > 29 ? data.title.substring(0,28) + '..' : data.title}</h4>
             <span class="course-price">${data.price}</span>
             <div class="ratings">
@@ -200,10 +201,11 @@ const whenClick = function(){
     courseOffersHome && courseOffersHome.addEventListener('click',function(event){
         const parentList = ['course-item','stars-outer','ratings']
         let item = ``;
-        // console.log(event.target.parentElement.classList[0])
+        
         if(event.target.parentElement.classList[0] === parentList[0]) item = event.target.parentElement;
         else if(event.target.parentElement.classList[0] === parentList[1]) item = event.target.parentElement.parentElement.parentElement;
         else if(event.target.parentElement.classList[0] === parentList[2]) item = event.target.parentElement.parentElement;
+        
         parentList.includes(event.target.parentElement.classList[0]) ? window.location.href = `confirm.html?${item.children[1].innerHTML}` : '';
     })
 }
@@ -381,7 +383,7 @@ menuBtns.forEach(btn => {
 const selectedItem = window.location.href.split('?').pop().split('%20').join(' ')
 const productDetails = document.querySelector(".product-details");
 const renderConfirm = function(data){
-
+    
     const starRating = `${Math.round((((data[0].rating / 5) * 100) / 10) * 10)}%`;
 
     let html = `
@@ -414,7 +416,7 @@ const renderConfirm = function(data){
 
     productDetails.insertAdjacentHTML('afterbegin',html);
 }
-productDetails && renderConfirm(homeData.homeData.filter(data => data.title === selectedItem))
+productDetails && renderConfirm(homeData.homeData.filter(data => data.id === Number(selectedItem)))
 
 // category and search event
 
