@@ -6,12 +6,11 @@
         .upper-details{
             display:flex;
             flex-direction:row;
-
+            flex-wrap: wrap;
             .image-container{
-                width:40%;
+                width:40vw;
                 display: flex;
                 justify-content: center;
-
                 img{
                     height:200px;
                     width:300px;
@@ -25,9 +24,8 @@
             }
 
             .details{
-                width:60%;
+                width:50vw;
                 padding:1%;
-                
                 .btn-choices{
                     margin-top:2rem;
                     width : 230px;
@@ -62,6 +60,7 @@
                 width:25%;
                 text-align: center;
                 line-height:40px;
+                font-size:1.5vw;
 
                 &:hover{
                     color:$main-color;
@@ -159,4 +158,18 @@
     }
 
     
+}
+
+@media screen and (max-width:675px){
+    .product-details{
+        .upper-details{
+            margin-left:2%;
+
+           
+        }
+    }
+
+    .user-review{
+        width:90%;
+    }
 }

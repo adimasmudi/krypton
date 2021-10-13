@@ -2750,10 +2750,12 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .dashboard-main-content .product-details .upper-details .image-container {
-  width: 40%;
+  width: 40vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2775,7 +2777,7 @@ body {
 }
 
 .dashboard-main-content .product-details .upper-details .details {
-  width: 60%;
+  width: 50vw;
   padding: 1%;
 }
 
@@ -2825,6 +2827,7 @@ body {
   width: 25%;
   text-align: center;
   line-height: 40px;
+  font-size: 1.5vw;
 }
 
 .dashboard-main-content .product-details .menu-toggle div:hover {
@@ -2930,5 +2933,14 @@ body {
 
 .user-review .upper-identity .details {
   margin-left: 2%;
+}
+
+@media screen and (max-width: 675px) {
+  .product-details .upper-details {
+    margin-left: 2%;
+  }
+  .user-review {
+    width: 90%;
+  }
 }
 /*# sourceMappingURL=style.css.map */

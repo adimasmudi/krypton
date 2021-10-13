@@ -196,13 +196,15 @@ challengeList && challengeFunction();
 forumList && renderForumList();
 
 const whenClick = function(){
-    courseOffersHome && window.addEventListener('DOMContentLoaded',function(){
-        const courseItems = document.querySelectorAll('.course-item');
-        courseItems.forEach(function(item){
-            item.addEventListener('click',function(){
-                window.location.href = `confirm.html?${item.children[1].innerHTML}`;
-            })
-        })
+
+    courseOffersHome && courseOffersHome.addEventListener('click',function(event){
+        const parentList = ['course-item','stars-outer','ratings']
+        let item = ``;
+        // console.log(event.target.parentElement.classList[0])
+        if(event.target.parentElement.classList[0] === parentList[0]) item = event.target.parentElement;
+        else if(event.target.parentElement.classList[0] === parentList[1]) item = event.target.parentElement.parentElement.parentElement;
+        else if(event.target.parentElement.classList[0] === parentList[2]) item = event.target.parentElement.parentElement;
+        parentList.includes(event.target.parentElement.classList[0]) ? window.location.href = `confirm.html?${item.children[1].innerHTML}` : '';
     })
 }
 
@@ -435,5 +437,6 @@ search && search.addEventListener('keyup',function(){
     else if(thePage === 'learning') searchResults(valueSearch,homeData.myLearning);
     else if(thePage === 'challenge') searchResults(valueSearch,homeData.challenge);
     else if(thePage === 'forum') searchResults(valueSearch,homeData.forum)
-    whenClick();
+    
+    
 })
